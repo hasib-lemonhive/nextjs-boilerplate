@@ -1,0 +1,13 @@
+# Declare services.
+services:
+  frontend:
+    build:
+      dockerfile: Dockerfile.dev
+      context: .
+    restart: on-failure:10
+    volumes:
+      - ./:/workspace
+      - /workspace/node_modules
+    ports:
+      - '3000:3000'
+      - '6006:6006'

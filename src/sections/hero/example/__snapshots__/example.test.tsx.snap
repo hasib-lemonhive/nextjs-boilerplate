@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Renders Example Hero correctly 1`] = `
+<section
+  class="dark:bg-slate-800 bg-gray-50"
+  data-testid="hero"
+>
+  <div
+    class="mx-auto max-w-screen-xl px-4 py-32 lg:flex lg:h-screen lg:items-center"
+  >
+    <div
+      class="mx-auto max-w-xl text-center"
+    >
+      <h1
+        class="text-3xl font-extrabold sm:text-5xl"
+      >
+        Mock Title
+        <strong
+          class="font-extrabold text-red-700 sm:block"
+        >
+          Emphazised Part
+        </strong>
+      </h1>
+      <p
+        class="mt-4 sm:text-xl sm:leading-relaxed"
+      >
+        Mock Description
+      </p>
+      <div
+        class="mt-8 flex flex-wrap justify-center gap-4"
+      >
+        <a
+          class="block w-full rounded bg-red-600 px-12 py-3 text-sm font-medium text-white shadow hover:bg-red-700 focus:outline-none focus:ring active:bg-red-500 sm:w-auto"
+          href="/server-side"
+        >
+          Server Side Example
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+`;
