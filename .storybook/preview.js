@@ -42,9 +42,7 @@ const withThemeProvider = (Story, context) => {
   }, [theme]);
 
   return (
-    <div
-      className={`text-black dark:text-slate-200 transition-colors ease-in ${roboto.variable} ${inter.variable}`}
-    >
+    <div className={`${roboto.variable} ${inter.variable}`}>
       <Story />
     </div>
   );
