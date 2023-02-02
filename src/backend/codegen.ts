@@ -12,9 +12,10 @@ const config: CodegenConfig = {
        * @see https://the-guild.dev/graphql/codegen/plugins/typescript/typescript-operations
        */
       config: {
-        typesPrefix: 'I',
+        typesPrefix: 'ISanity',
         enumPrefix: false,
         defaultScalarType: 'unknown',
+        avoidOptionals: true,
       },
     },
   },
