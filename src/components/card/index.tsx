@@ -1,21 +1,20 @@
 import React from 'react';
 import { CardImageDimensions, ICard } from './interfaces';
-import Image from 'next/image';
 import Link from 'next/link';
 import Styles from './card.module.scss';
 import { PortableText } from '@portabletext/react';
+import { CustomImage } from '@components/custom-image';
 
 function BaseCard({ dog, testId }: Omit<ICard, 'link'>) {
   return (
     <div className="p-10" data-testid={testId || undefined}>
       <div className={Styles.card}>
-        <Image
+        <CustomImage
+          alt={dog.image.alt}
           height={CardImageDimensions.height}
           width={CardImageDimensions.width}
           src={dog.image.url}
-          alt={dog.image.alt}
-          placeholder={'blur'}
-          blurDataURL={dog.image.lqip}
+          lqip={dog.image.lqip}
         />
         <div className="px-6 py-4">
           <div className="font-bold text-xl mb-2">{dog.name}</div>
