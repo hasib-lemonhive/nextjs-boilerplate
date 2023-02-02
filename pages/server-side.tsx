@@ -6,7 +6,7 @@ import { ISanityDog } from 'src/backend/types';
 import Card from 'src/components/card';
 import Link from 'next/link';
 import { PortableTextBlock } from '@portabletext/types';
-import { urlForFitWidth } from 'src/backend/image-builder';
+import { urlFor } from 'src/backend/image-builder';
 import { CardImageDimensions } from '@components/card/interfaces';
 
 interface Props {
@@ -46,9 +46,10 @@ const Home: NextPage<Props> = ({ dogs }) => {
 
         <div className="grid items-center justify-center flex-wrap max-w-3xl grid-cols-2">
           {dogs.map((dog: ISanityDog, index: number) => {
-            const image = urlForFitWidth(
+            const image = urlFor(
               dog.customImageSchema?.imageFile!,
-              CardImageDimensions.width
+              CardImageDimensions.width,
+              CardImageDimensions.height
             );
 
             return (
