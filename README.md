@@ -1,5 +1,7 @@
 # NextJs Starter v1.0
 
+This version of the template contains additional configurations that will help with sanity-graphql projects built using the sanity template.
+
 **It is important to read through this file before working on this project. Specially the Project Guidelines and Apollo Graphql Section.**
 
 ## Getting Started
@@ -63,7 +65,7 @@ The actions are setup to cancel if a new action relating to the same branch is s
 
 When opening this project on VScode you will asked whether you want to install the recommended extensions. Please do so. The extensions are a part of the project.
 
-## Branch Naming
+### Branch Naming
 
 - `main` : The production branch. The project lead will create a PR against the production branch, from the development branch at the end of each sprint.
 - `develop` : The development branch. This the branch against which team members will create a PR when their feature/refactor/hotfix is complete.
@@ -73,7 +75,7 @@ When opening this project on VScode you will asked whether you want to install t
 
 This branch naming convention will help the project lead prioritize and track PR reviews.
 
-## Folder Structure
+### Folder Structure
 
 This project template contains a number of configuration files defining the behavior of linter, typescript, jest, storybook etc.
 
@@ -140,7 +142,7 @@ Card
 - We cannot use `pages` in `src` folder because font optimization does not seem to work if we do. This could be a tailwind issue.
 - Nextjs will not support test and story files in the `pages` folder. In our development style we should not need page level testing. Incase we do, we have to add additional configuration in `next.config.js`. Please see [Custom Page Extensions](https://nextjs.org/docs/api-reference/next.config.js/custom-page-extensions).
 
-## Typescript
+### Typescript
 
 Typescript is the backbone of a good **team** project. You can look up many articles on why Typescript is so popular in production grade projects.
 
@@ -152,14 +154,16 @@ Here are a few rules we like to follow while using typescript:
 
 Try to make use of utilities like `Omit`, `Pick` and `<T>` to make types and interfaces reusable. This is something that will come with practice.
 
-## Coding Pratices
+### Coding Pratices
 
 - When writing code please remember that your code is meant to be read by the team. It is a common developer trait to submit code as soon the task is complete, but usually in that stage the code is not very readable (clean). The key thing to understand here is `context`. You have all the context about your code but your fellow team member doesn't. This is why you might think your code makes complete sense but in reality it will confuse people. Once you are done implementing your feature, and you are happy with how it renders and behaves. Take a break, drink some coffee/tea/juice, go for a walk etc. When you are back do the following:
   - Skim through your code, don't **read** through it. You are looking for patterns. Repeating Patterns. If you spot any, make them into a reusable variable or function.
   - Look for variable names that are not clear/understandable and change them.
-- Try **very hard** to keep the usage of `useEffect` and `useState` to a minimum. It is an annoying pursuit because it forces us to think differently. **But** in a growing project `useEffect` can lead to adverse behavior that becomes hard to to track. If you don't want to annoy the hell out of a future maintainer (could be you yourself) then you should think twice before submitting a PR that contains more than 1 useEffect. React themselves are trying to make developers understand the they are using useEffect the wrong way.
+- Try **very hard** to keep the usage of `useEffect` and `useState` to a minimum. It is an annoying pursuit because it forces us to think differently. **But** in a growing project `useEffect` can lead to adverse behavior that becomes hard to to track. If you don't want to annoy the hell out of a future maintainer (could be you yourself) then you should think twice before submitting a PR that contains more than 1 useEffect. React themselves are trying to make developers understand the they are using useEffect the wrong way. If you are trying to fetch data on the client side you can try `useSWR`.
+
   - [Goodbye, UseEffect](https://www.youtube.com/watch?v=bGzanfKVFeU)
   - [React Beta Docs](https://beta.reactjs.org/)
+
 - If your component becomes very big 250 lines plus, then its a good idea to separate it into chunks. [Folder Structure](/README.md#folder-structure) describes where to put these `sub-components`.
 - Use meaningful variable names, its fine if it becomes too long, we would rather have a long human readable name instead of a short incomprehensive one.
 - When it comes to commenting one of the things you have to keep in mind is `Will I forget this?` If you feel like this is block of code that is unclear then you can include a comment that describes what the block of code is doing. Please do not provide comments for code that is easy to interpret/straighforward. Please use the style of commenting shown in the example.
@@ -182,14 +186,14 @@ function weirdFunction(arg: string) {
  */
 ```
 
-## Tailwind
+### Tailwind
 
 - Common tailwind classes in a component should be extracted in a `const/var`. This will make it easier to update design by updating one variable. Only do this if you are sure all components using this class should be updated when design changes are made.
   - When extracting tailwind classes to variables/constants please use the suffix `CSS` at the end of the variable name. For example `const headerContainerCSS = "flex..."`
 - We should try to include most of our styles in our `tsx` file.
 - We should use `module.scss` for conditional css classes.
 
-## Storybook
+### Storybook
 
 This project uses the beta version of storybook 7. This was necessary because Storybook 6 does not support `next/font` optimizations.
 
@@ -213,7 +217,7 @@ Please study the storybook examples provided in this template. Your storybook sh
   - Component with error.
 - Storybook should not contain controls for component props that an editor does not control, please look a this resource and search for the `disable` keyword, [Setting up or disabling controls](https://storybook.js.org/docs/7.0/react/essentials/controls)
 
-## Testing
+### Testing
 
 There are many opinions on testing. From our experience we have realised that its best to not get lost in this rabbit hole.
 
@@ -234,7 +238,7 @@ The key here is to only write snapshot tests when you have verified that the com
 
 A keen eye will notice we are following test driven development for functions but not for components. This is essentially because TDD for components is too time consuming, snapshot tests fail if the component render changes and that will capture all interation changes that don't call methods.
 
-## Commits
+### Commits
 
 The way we commit makes tracking and reverting mistakes easier. Always try to make small commits.
 
