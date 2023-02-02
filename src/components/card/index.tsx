@@ -1,20 +1,27 @@
 import React from 'react';
-import { ICard } from './interfaces';
+import { CardImageDimensions, ICard } from './interfaces';
 import Image from 'next/image';
-import PuppyImage from 'public/puppy.jpg';
 import Link from 'next/link';
 import Styles from './card.module.scss';
+import { PortableText } from '@portabletext/react';
 
-function BaseCard({ header, paragraph, testId }: Omit<ICard, 'link'>) {
+function BaseCard({ dog, testId }: Omit<ICard, 'link'>) {
   return (
     <div className="p-10" data-testid={testId || undefined}>
       <div className={Styles.card}>
-        <Image className="w-full" src={PuppyImage} alt="Puppy" />
+        <Image
+          height={CardImageDimensions.height}
+          width={CardImageDimensions.width}
+          src={dog.image.url}
+          alt={dog.image.alt}
+          placeholder={'blur'}
+          blurDataURL={dog.image.lqip}
+        />
         <div className="px-6 py-4">
-          <div className="font-bold text-xl mb-2">{header}</div>
-          <p className="text-gray-700 dark:text-slate-200 text-base">
-            {paragraph}
-          </p>
+          <div className="font-bold text-xl mb-2">{dog.name}</div>
+          <div className="text-gray-700 dark:text-slate-200 text-base truncate">
+            <PortableText value={dog.description} />
+          </div>
         </div>
         <div className="px-6 pt-4 pb-2">
           <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
@@ -32,15 +39,15 @@ function BaseCard({ header, paragraph, testId }: Omit<ICard, 'link'>) {
   );
 }
 
-function Card({ link, header, paragraph, testId }: ICard) {
+function Card({ link, dog, testId }: ICard) {
   if (link !== undefined) {
     return (
       <Link href={link}>
-        <BaseCard header={header} paragraph={paragraph} testId={testId} />
+        <BaseCard dog={dog} testId={testId} />
       </Link>
     );
   } else {
-    return <BaseCard header={header} paragraph={paragraph} testId={testId} />;
+    return <BaseCard dog={dog} testId={testId} />;
   }
 }
 
