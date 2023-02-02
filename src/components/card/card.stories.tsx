@@ -1,5 +1,6 @@
 import Component from '.';
 import { Meta, StoryObj } from '@storybook/react';
+import { mockDog } from './mock-data';
 
 const meta: Meta<typeof Component> = {
   component: Component,
@@ -11,5 +12,5 @@ const meta: Meta<typeof Component> = {
 export default meta;
 
 export const Primary: StoryObj<typeof Component> = {
-  args: { header: 'Header One', paragraph: 'Paragraph', link: '#' },
+  args: { dog: mockDog },
 };
