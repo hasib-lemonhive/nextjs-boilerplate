@@ -1,16 +1,19 @@
 import Head from 'next/head';
 import type { NextPage, GetServerSideProps } from 'next';
 import client from 'src/backend/client';
-import { CountriesQuery } from 'src/backend/queries/country';
-import { ICountry } from 'src/backend/types';
+import { DogsQuery } from 'src/backend/queries/dogs';
+import { ISanityDog } from 'src/backend/types';
 import Card from 'src/components/card';
 import Link from 'next/link';
+import { PortableTextBlock } from '@portabletext/types';
+import { urlForFitWidth } from 'src/backend/image-builder';
+import { CardImageDimensions } from '@components/card/interfaces';
 
 interface Props {
-  countries: ICountry[];
+  dogs: ISanityDog[];
 }
 
-const Home: NextPage<Props> = ({ countries }) => {
+const Home: NextPage<Props> = ({ dogs }) => {
   return (
     <>
       <Head>
@@ -42,13 +45,29 @@ const Home: NextPage<Props> = ({ countries }) => {
         </Link>
 
         <div className="grid items-center justify-center flex-wrap max-w-3xl grid-cols-2">
-          {countries.map((country: ICountry) => (
-            <Card
-              key={country.code}
-              header={country.name}
-              paragraph={country.code}
-            />
-          ))}
+          {dogs.map((dog: ISanityDog, index: number) => {
+            const image = urlForFitWidth(
+              dog.customImageSchema?.imageFile!,
+              CardImageDimensions.width
+            );
+
+            return (
+              <Card
+                key={index}
+                dog={{
+                  breed: dog.breed!,
+                  description:
+                    dog.customPortableTextRaw! as PortableTextBlock[],
+                  name: dog.name!,
+                  image: {
+                    url: image.src,
+                    alt: dog.customImageSchema?.altDescription!,
+                    lqip: image.lqip,
+                  },
+                }}
+              />
+            );
+          })}
         </div>
       </main>
     </>
@@ -59,12 +78,12 @@ export default Home;
 
 export const getServerSideProps: GetServerSideProps = async () => {
   const { data } = await client.query({
-    query: CountriesQuery,
+    query: DogsQuery,
   });
 
   return {
     props: {
-      countries: data.countries.slice(0, 4),
+      dogs: data.allDog,
     },
   };
 };
