@@ -2,6 +2,11 @@ import Image from 'next/image';
 import { useState } from 'react';
 import { ICustomFillImage, ICustomImage } from './interface';
 
+/**
+ * This is a custom image component with a fallback image if the src fails.
+ * @param props ICustomImage
+ * @returns
+ */
 export function CustomImage(props: ICustomImage) {
   const [src, setSrc] = useState(props.src);
 
@@ -20,6 +25,11 @@ export function CustomImage(props: ICustomImage) {
   );
 }
 
+/**
+ * This is a custom fill image component with a fallback image if the src fails.
+ * @param props ICustomImage
+ * @returns
+ */
 export function CustomFillImage(props: ICustomFillImage) {
   const [src, setSrc] = useState(props.src);
 
