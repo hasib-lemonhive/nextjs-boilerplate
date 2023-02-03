@@ -18,7 +18,11 @@ import { ILinkWrapper } from './interface';
  */
 export function LinkWrapper({ href, openNewTab, children }: ILinkWrapper) {
   return (
-    <Link href={href} target={openNewTab ? '_blank' : '_self'}>
+    <Link
+      href={href}
+      target={openNewTab ? '_blank' : '_self'}
+      rel={href.startsWith('/') ? 'noreferrer noopener' : undefined}
+    >
       {children}
     </Link>
   );
