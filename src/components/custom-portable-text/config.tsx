@@ -88,7 +88,8 @@ export const CustomComponents: PortableTextComponents = {
      * be handled and maintain by someone who is familiar with the sanity codebase.
      */
     link: ({ children, value }) => {
-      const sanityLink: CustomOptionalLink | CustomRequiedLink = value;
+      const sanityLink: CustomOptionalLink | CustomRequiedLink =
+        value.portableTextLink;
       let link;
       if (sanityLink.linkType == 'internalLink') {
         link = extractLink(sanityLink);
