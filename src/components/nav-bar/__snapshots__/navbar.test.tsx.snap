@@ -3,7 +3,6 @@
 exports[`Renders Example Navbar correctly  1`] = `
 <nav
   class="fixed flex items-center justify-end flex-wrap py-4 w-11/12"
-  data-testid="navbar"
 >
   <button
     class="text-5xl"

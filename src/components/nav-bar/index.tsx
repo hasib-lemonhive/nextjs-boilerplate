@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { MdDarkMode, MdLightMode } from 'react-icons/md';
-import { INavigationBar, ThemeValues } from './interface';
+import { ThemeValues } from './interface';
 import { SetTheme } from './utils';
 
-function ExampleNavbar({ testId }: INavigationBar) {
+function ExampleNavbar() {
   const [activeTheme, setActiveTheme] = useState<ThemeValues>(undefined);
 
   useEffect(() => {
@@ -17,10 +17,7 @@ function ExampleNavbar({ testId }: INavigationBar) {
   }, []);
 
   return (
-    <nav
-      data-testid={testId || null}
-      className="fixed flex items-center justify-end flex-wrap py-4 w-11/12"
-    >
+    <nav className="fixed flex items-center justify-end flex-wrap py-4 w-11/12">
       <button
         className="text-5xl"
         onClick={() => {

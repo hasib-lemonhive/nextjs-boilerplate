@@ -17,8 +17,8 @@ it('Renders Example Navbar correctly ', () => {
     })),
   });
 
-  const { getByTestId } = render(<Component testId="navbar" />);
-  const element = getByTestId('navbar');
+  const { getByRole } = render(<Component />);
+  const element = getByRole('navigation');
   expect(element).toBeInTheDocument();
   expect(element).toMatchSnapshot();
 });
