@@ -9,16 +9,15 @@ exports[`renders Buy Ticket Card correctly 1`] = `
     class="card"
   >
     <img
-      alt="Puppy"
-      class="w-full"
+      alt="Test Alt"
       data-nimg="1"
       decoding="async"
-      height="40"
+      height="400"
       loading="lazy"
-      src="/_next/image?url=%2Fimg.jpg&w=96&q=75"
-      srcset="/_next/image?url=%2Fimg.jpg&w=48&q=75 1x, /_next/image?url=%2Fimg.jpg&w=96&q=75 2x"
-      style="color: transparent;"
-      width="40"
+      src="http://localhost/_next/image?url=https%3A%2F%2Fassets.imgix.net%2Funsplash%2Fjellyfish.jpg%3Fw%3D800%26h%3D400%26fit%3Dcrop%26crop%3Dentropy&w=1200&q=75"
+      srcset="/_next/image?url=https%3A%2F%2Fassets.imgix.net%2Funsplash%2Fjellyfish.jpg%3Fw%3D800%26h%3D400%26fit%3Dcrop%26crop%3Dentropy&w=640&q=75 1x, /_next/image?url=https%3A%2F%2Fassets.imgix.net%2Funsplash%2Fjellyfish.jpg%3Fw%3D800%26h%3D400%26fit%3Dcrop%26crop%3Dentropy&w=1200&q=75 2x"
+      style="color: transparent; background-size: cover; background-position: 50% 50%; background-repeat: no-repeat;"
+      width="600"
     />
     <div
       class="px-6 py-4"
@@ -26,13 +25,23 @@ exports[`renders Buy Ticket Card correctly 1`] = `
       <div
         class="font-bold text-xl mb-2"
       >
-        Hello
+        Test Name
       </div>
-      <p
-        class="text-gray-700 dark:text-slate-200 text-base"
+      <div
+        class="text-gray-700 dark:text-slate-200 text-base truncate"
       >
-        world
-      </p>
+        <h2>
+          About the Breed
+        </h2>
+        <p />
+        <p>
+          The Alaskan Klee Kai is a small-sized companion dog that is alert, energetic, and curious, yet reserved with unfamiliar people and situations.
+        </p>
+        <p>
+          The Alaskan Klee Kai is a small sized companion dog with a smooth, agile, and well-balanced gait, a body that is well proportioned with a level topline and a length slightly longer than height. The wedge-shaped head, erect triangle shaped ears, well furred double coat in three symmetrical contrasting color varieties, and a loosely curled tail reflect its arctic heritage.
+        </p>
+        <p />
+      </div>
     </div>
     <div
       class="px-6 pt-4 pb-2"
