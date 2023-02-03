@@ -3,10 +3,10 @@ import Card from '.';
 import { mockDog } from './mock-data';
 
 it('renders Buy Ticket Card correctly', () => {
-  const { getByTestId } = render(
-    <Card link="https://www.google.com" dog={mockDog} testId="card" />
+  const { getByRole } = render(
+    <Card link="https://www.google.com" dog={mockDog} />
   );
-  const element = getByTestId('card');
+  const element = getByRole('base-card');
   expect(element).toBeInTheDocument();
   expect(element).toMatchSnapshot();
 });

@@ -3,7 +3,7 @@
 exports[`renders Buy Ticket Card correctly 1`] = `
 <div
   class="p-10"
-  data-testid="card"
+  role="base-card"
 >
   <div
     class="card"

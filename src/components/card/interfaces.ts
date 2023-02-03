@@ -19,5 +19,4 @@ export const CardImageDimensions = {
 export interface ICard {
   dog: IDog;
   link?: string;
-  testId?: string;
 }

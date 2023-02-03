@@ -5,9 +5,9 @@ import Styles from './card.module.scss';
 import { PortableText } from '@portabletext/react';
 import { CustomImage } from '@components/custom-image';
 
-function BaseCard({ dog, testId }: Omit<ICard, 'link'>) {
+function BaseCard({ dog }: Omit<ICard, 'link'>) {
   return (
-    <div className="p-10" data-testid={testId || undefined}>
+    <div className="p-10" role="base-card">
       <div className={Styles.card}>
         <CustomImage
           alt={dog.image.alt}
@@ -38,15 +38,15 @@ function BaseCard({ dog, testId }: Omit<ICard, 'link'>) {
   );
 }
 
-function Card({ link, dog, testId }: ICard) {
+function Card({ link, dog }: ICard) {
   if (link !== undefined) {
     return (
       <Link href={link}>
-        <BaseCard dog={dog} testId={testId} />
+        <BaseCard dog={dog} />
       </Link>
     );
   } else {
-    return <BaseCard dog={dog} testId={testId} />;
+    return <BaseCard dog={dog} />;
   }
 }
 
