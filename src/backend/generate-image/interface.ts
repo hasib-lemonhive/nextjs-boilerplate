@@ -3,11 +3,10 @@ export interface IGeneratedImage {
   lqip: string;
 }
 
-
-export interface IGeneratedImageFitHeight extends IGeneratedImage{
-  width: number
+export interface IGeneratedImageFitHeight extends IGeneratedImage {
+  width: number;
 }
 
-export interface IGeneratedImageFitWidth extends IGeneratedImage{
-  height: number
+export interface IGeneratedImageFitWidth extends IGeneratedImage {
+  height: number;
 }
