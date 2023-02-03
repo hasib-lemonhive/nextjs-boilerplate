@@ -3,7 +3,7 @@
 exports[`Renders Example Footer correctly 1`] = `
 <section
   class="dark:bg-slate-900 bg-gray-400 flex items-center justify-center py-6"
-  data-testid="footer"
+  role="footer"
 >
   <p>
     Footer
