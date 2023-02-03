@@ -3,7 +3,9 @@ import { useState } from 'react';
 import { ICustomFillImage, ICustomImage } from './interface';
 
 /**
- * This is a custom image component with a fallback image if the src fails.
+ * This is a custom image component. It has the following features:
+ * - Uses lqip to render placeholder images, sanity images have lqip so it can passed here.
+ * - Renders a fallback image if the src fails to load.
  * @param props ICustomImage
  * @returns
  */
@@ -26,7 +28,10 @@ export function CustomImage(props: ICustomImage) {
 }
 
 /**
- * This is a custom fill image component with a fallback image if the src fails.
+ * This is a custom image component. It has the following features:
+ * - Renders in layout fill mode.
+ * - Uses lqip to render placeholder images, sanity images have lqip so it can passed here.
+ * - Renders a fallback image if the src fails to load.
  * @param props ICustomImage
  * @returns
  */
