@@ -3,8 +3,8 @@ import ExampleHero from '.';
 import { mockdata } from './mock-data';
 
 it('Renders Example Hero correctly', () => {
-  const { getByTestId } = render(<ExampleHero {...mockdata} testId="hero" />);
-  const element = getByTestId('hero');
+  const { getByRole } = render(<ExampleHero {...mockdata} />);
+  const element = getByRole('hero');
   expect(element).toBeInTheDocument();
   expect(element).toMatchSnapshot();
 });

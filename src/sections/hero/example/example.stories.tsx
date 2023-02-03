@@ -17,9 +17,6 @@ const meta: Meta<typeof Component> = {
     title: {
       control: false,
     },
-    testId: {
-      control: false,
-    },
   },
 };
 

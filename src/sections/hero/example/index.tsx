@@ -2,12 +2,9 @@ import Link from 'next/link';
 import React from 'react';
 import { IExampleHero } from './interface';
 
-function ExampleHero({ title, description, testId }: IExampleHero) {
+function ExampleHero({ title, description }: IExampleHero) {
   return (
-    <section
-      className={`dark:bg-slate-800 bg-gray-50`}
-      data-testid={testId || null}
-    >
+    <section role="hero" className={`dark:bg-slate-800 bg-gray-50`}>
       <div className="mx-auto max-w-screen-xl px-4 py-32 lg:flex lg:h-screen lg:items-center">
         <div className="mx-auto max-w-xl text-center">
           <h1 className={`text-3xl font-extrabold sm:text-5xl`}>

@@ -4,5 +4,4 @@ export interface IExampleHero {
     emphasizedPart: string;
   };
   description: string;
-  testId?: string;
 }

@@ -3,7 +3,7 @@
 exports[`Renders Example Hero correctly 1`] = `
 <section
   class="dark:bg-slate-800 bg-gray-50"
-  data-testid="hero"
+  role="hero"
 >
   <div
     class="mx-auto max-w-screen-xl px-4 py-32 lg:flex lg:h-screen lg:items-center"
