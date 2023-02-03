@@ -1,6 +1,6 @@
 import 'styles/globals.css';
 import type { AppProps } from 'next/app';
-import ExampleNavbar from '@components/nav-bar';
+import ExampleNavbar from 'src/sections/nav-bar';
 import { inter, roboto } from 'fonts';
 
 function MyApp({ Component, pageProps }: AppProps) {
