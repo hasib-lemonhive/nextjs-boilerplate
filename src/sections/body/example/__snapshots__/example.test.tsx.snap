@@ -3,7 +3,7 @@
 exports[`Renders Example Body section correctly 1`] = `
 <section
   class="dark:bg-slate-600 bg-gray-200 h-screen flex items-center justify-center"
-  data-testid="body"
+  role="example-body-section"
 >
   <div
     class="container text-center"

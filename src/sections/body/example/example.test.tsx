@@ -3,8 +3,8 @@ import ExampleBody from '.';
 import { mockdata } from './mock-data';
 
 it('Renders Example Body section correctly', () => {
-  const { getByTestId } = render(<ExampleBody {...mockdata} testId="body" />);
-  const element = getByTestId('body');
+  const { getByRole } = render(<ExampleBody {...mockdata} />);
+  const element = getByRole('example-body-section');
   expect(element).toBeInTheDocument();
   expect(element).toMatchSnapshot();
 });
