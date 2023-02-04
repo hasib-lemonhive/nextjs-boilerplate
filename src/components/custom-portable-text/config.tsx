@@ -16,7 +16,7 @@
 import React from 'react';
 import { CustomPortableText } from '.';
 import { PortableTextComponents } from '@portabletext/react';
-import { extractLink } from 'src/utils/extract-link';
+//import { extractLink } from 'src/utils/extract-link';
 import { LinkWrapper } from '@components/link-wrapper';
 import { CustomImage } from '@components/custom-image';
 import {
@@ -92,7 +92,9 @@ export const CustomComponents: PortableTextComponents = {
         value.portableTextLink;
       let link;
       if (sanityLink.linkType == 'internalLink') {
-        link = extractLink(sanityLink);
+        // TODO (zarif) : Fix this
+        // link = extractLink(sanityLink);
+        link = 'https://www.google.com';
       } else {
         link = sanityLink.externalLink!;
       }
