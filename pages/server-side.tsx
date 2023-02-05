@@ -13,7 +13,6 @@ interface Props {
 }
 
 const Home: NextPage<Props> = ({ dogs }) => {
-  console.log(dogs[0]);
   return (
     <>
       <Head>
@@ -78,7 +77,6 @@ export default Home;
 
 export const getServerSideProps: GetServerSideProps = async () => {
   const data = await client.fetch<ISanityDog[]>(DogsQuery);
-  console.log(data);
   return {
     props: {
       dogs: data,

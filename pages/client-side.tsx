@@ -10,7 +10,6 @@ const Home: NextPage = () => {
   const { data, error, isLoading } = useSWR<ISanityPage>(PageQuery, (query) =>
     client.fetch(query)
   );
-  console.log(data);
 
   return (
     <>
