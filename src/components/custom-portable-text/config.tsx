@@ -165,7 +165,7 @@ export const CustomComponents: PortableTextComponents = {
       const internalBlock: ISanityInternalBlock = value;
 
       return (
-        <div>
+        <div className="bg-slate-500 rounded-lg my-4">
           <CustomPortableText content={internalBlock.content} />
         </div>
       );

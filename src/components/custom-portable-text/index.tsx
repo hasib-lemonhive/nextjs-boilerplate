@@ -10,7 +10,7 @@ import { ICustomPortableText } from './interface';
  */
 export const CustomPortableText = ({ content }: ICustomPortableText) => {
   return (
-    <div>
+    <div className="px-4 py-4">
       <PortableText value={content} components={CustomComponents} />
     </div>
   );
