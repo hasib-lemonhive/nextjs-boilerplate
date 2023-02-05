@@ -1,13 +1,16 @@
 import Head from 'next/head';
 import type { NextPage } from 'next';
-import { ISanityPage } from 'src/backend/types';
-import { useQuery } from '@apollo/client';
 import { PageQuery } from 'src/backend/queries/page';
 import { CustomPortableText } from '@components/custom-portable-text';
-import { PortableTextBlock } from '@portabletext/types';
+import useSWR from 'swr';
+import { client } from 'src/backend/client';
+import { ISanityPage } from 'src/backend/types/entities/page';
 
 const Home: NextPage = () => {
-  const { loading, error, data } = useQuery<{ Page: ISanityPage }>(PageQuery);
+  const { data, error, isLoading } = useSWR<ISanityPage>(PageQuery, (query) =>
+    client.fetch(query)
+  );
+  console.log(data);
 
   return (
     <>
@@ -17,13 +20,11 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="flex flex-1 flex-col justify-center items-center min-h-screen pt-16 bg-slate-100 dark:bg-slate-800">
-        {loading && <div>Loading...</div>}
+        {isLoading && <div>Loading...</div>}
         {error && <div>{error.message}</div>}
         {data && (
           <div>
-            <CustomPortableText
-              content={data.Page.customPortableTextRaw as PortableTextBlock[]}
-            />
+            <CustomPortableText content={data.content} />
           </div>
         )}
       </main>

@@ -1,20 +1,28 @@
+import { createClient } from 'next-sanity';
+
+export const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID!;
+export const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET!;
+export const apiVersion = process.env.NEXT_PUBLIC_SANITY_API_VERSION!;
+
 /**
- * Apollo has to be used differently in NextJS based on how
- * the data is being called.
- * Please @see https://www.apollographql.com/blog/apollo-client/next-js/next-js-getting-started/
+ * Sanity client to be used with published documents
  */
-
-import { ApolloClient, InMemoryCache } from '@apollo/client';
-
-const GRAPHQL_URI = process.env.NEXT_PUBLIC_GRAPHQL_URI;
-
-const client = new ApolloClient({
-  uri: GRAPHQL_URI,
-  cache: new InMemoryCache(),
-  /* credentials: 'omit',
-  headers: {
-    authorization: localStorage.getItem('token'),
-  }, */
+export const client = createClient({
+  projectId,
+  dataset,
+  apiVersion,
+  // This has to be false inorder for the frontend to update with new content.
+  useCdn: false,
 });
 
-export default client;
+/**
+ * Sanity client to be used with preview mode.
+ */
+export const previewClient = createClient({
+  projectId,
+  dataset,
+  apiVersion,
+  // This has to be false inorder for the frontend to update with new content.
+  useCdn: false,
+  token: process.env.SANITY_API_TOKEN,
+});

@@ -1,11 +1,10 @@
 import Head from 'next/head';
 import type { NextPage, GetServerSideProps } from 'next';
-import client from 'src/backend/client';
+import { client } from 'src/backend/client';
 import { DogsQuery } from 'src/backend/queries/dogs';
-import { ISanityDog } from 'src/backend/types';
+import { ISanityDog } from 'src/backend/types/entities/dog';
 import Card from 'src/components/card';
 import Link from 'next/link';
-import { PortableTextBlock } from '@portabletext/types';
 import { generateImageUrlFixedDimensions } from 'src/backend/generate-image';
 import { CardImageDimensions } from '@components/card/interfaces';
 
@@ -14,6 +13,7 @@ interface Props {
 }
 
 const Home: NextPage<Props> = ({ dogs }) => {
+  console.log(dogs[0]);
   return (
     <>
       <Head>
@@ -47,7 +47,7 @@ const Home: NextPage<Props> = ({ dogs }) => {
         <div className="grid items-center justify-center flex-wrap max-w-3xl grid-cols-2">
           {dogs.map((dog: ISanityDog, index: number) => {
             const image = generateImageUrlFixedDimensions(
-              dog.customImageSchema?.imageFile!,
+              dog.image.imageFile,
               CardImageDimensions.width,
               CardImageDimensions.height
             );
@@ -56,13 +56,12 @@ const Home: NextPage<Props> = ({ dogs }) => {
               <Card
                 key={index}
                 dog={{
-                  breed: dog.breed!,
-                  description:
-                    dog.customPortableTextRaw! as PortableTextBlock[],
-                  name: dog.name!,
+                  breed: dog.breed,
+                  description: dog.description,
+                  name: dog.name,
                   image: {
                     url: image.src,
-                    alt: dog.customImageSchema?.altDescription!,
+                    alt: dog.image.altDescription,
                     lqip: image.lqip,
                   },
                 }}
@@ -78,13 +77,11 @@ const Home: NextPage<Props> = ({ dogs }) => {
 export default Home;
 
 export const getServerSideProps: GetServerSideProps = async () => {
-  const { data } = await client.query({
-    query: DogsQuery,
-  });
-
+  const data = await client.fetch<ISanityDog[]>(DogsQuery);
+  console.log(data);
   return {
     props: {
-      dogs: data.allDog,
+      dogs: data,
     },
   };
 };
