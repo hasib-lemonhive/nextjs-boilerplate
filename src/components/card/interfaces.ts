@@ -1,9 +1,9 @@
-import { PortableTextBlock } from '@portabletext/types';
+import { ISanityCustomPortableText } from './../../backend/types/general/portable-text';
 
 export interface IDog {
   name: string;
   breed: string;
-  description: PortableTextBlock[];
+  description: ISanityCustomPortableText;
   image: {
     url: string;
     alt: string;
