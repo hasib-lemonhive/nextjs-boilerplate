@@ -10,7 +10,9 @@ on:
 
 # Add necessary env
 env:
-  NEXT_PUBLIC_GRAPHQL_URI: ${{ secrets.NEXT_PUBLIC_GRAPHQL_URI}}
+  NEXT_PUBLIC_SANITY_PROJECT_ID: ${{ secrets.NEXT_PUBLIC_SANITY_PROJECT_ID}}
+  NEXT_PUBLIC_SANITY_DATASET: ${{ secrets.NEXT_PUBLIC_SANITY_DATASET}}
+  NEXT_PUBLIC_SANITY_API_VERSION: ${{ secrets.NEXT_PUBLIC_SANITY_API_VERSION}}
 
 # Cancel in-progress actions when a new action is triggered
 concurrency:
