@@ -19,6 +19,7 @@ import { ILinkWrapper } from './interface';
 export function LinkWrapper({ href, openNewTab, children }: ILinkWrapper) {
   return (
     <Link
+      className="text-cyan-500 underline"
       href={href}
       target={openNewTab ? '_blank' : '_self'}
       rel={href.startsWith('/') ? 'noreferrer noopener' : undefined}
