@@ -16,17 +16,17 @@
 import React from 'react';
 import { CustomPortableText } from '.';
 import { PortableTextComponents } from '@portabletext/react';
-//import { extractLink } from 'src/utils/extract-link';
+import { extractLink } from 'src/utils/extract-link';
 import { LinkWrapper } from '@components/link-wrapper';
 import { CustomImage } from '@components/custom-image';
-import {
-  ISanityCustomImageSchema,
-  ISanityCustomVideoSchema,
-  ISanityInternalBlock,
-} from 'src/backend/types';
-import { CustomOptionalLink, CustomRequiedLink } from 'src/types';
 import { generateImageUrl } from 'src/backend/generate-image';
-import { PortableTextBlock } from '@portabletext/types';
+import {
+  ISanityOptionalLink,
+  ISanityRequiredLink,
+} from 'src/backend/types/general/links';
+import { ISanityCustomImage } from 'src/backend/types/general/image';
+import { ISanityCustomVideo } from 'src/backend/types/general/video';
+import { ISanityInternalBlock } from 'src/backend/types/general/internal-block';
 
 /**
  * This function will return true if a block contains one child
@@ -41,27 +41,24 @@ const isEmptyBlock = (children: React.ReactNode) => {
   return React.Children.count(children) == 1 && children?.toString() == '';
 };
 
-/**
- */
 export const CustomComponents: PortableTextComponents = {
   /**
-   * Blocks are top level objects in a portable text array. We look at the style attribute
-   * of a block to determine how it should be rendered. Default style is "normal" which is rendered
-   * as <p></p>
+   * Blocks are top level objects in a portable text array. We look at the
+   * style attribute.
    */
   block: {
-    h1: ({ children, value: { _key } }) => {
+    headingOne: ({ children, value: { _key } }) => {
       if (isEmptyBlock(children)) {
         return <br />;
       } else {
         return (
-          <h2 className="text-blue-600 text-4xl" id={_key}>
+          <h2 className="text-blue-600 text-4xl font-inter" id={_key}>
             {children}
           </h2>
         );
       }
     },
-    h2: ({ children, value: { _key } }) => {
+    headingTwo: ({ children, value: { _key } }) => {
       if (isEmptyBlock(children)) {
         return <br />;
       }
@@ -75,7 +72,11 @@ export const CustomComponents: PortableTextComponents = {
       if (React.Children.count(children) == 1 && children?.toString() == '') {
         return <br />;
       } else {
-        return <p id={_key}>{children}</p>;
+        return (
+          <p className="font-inter" id={_key}>
+            {children}
+          </p>
+        );
       }
     },
   },
@@ -88,13 +89,12 @@ export const CustomComponents: PortableTextComponents = {
      * be handled and maintain by someone who is familiar with the sanity codebase.
      */
     link: ({ children, value }) => {
-      const sanityLink: CustomOptionalLink | CustomRequiedLink =
+      const sanityLink: ISanityRequiredLink | ISanityOptionalLink =
         value.portableTextLink;
+
       let link;
       if (sanityLink.linkType == 'internalLink') {
-        // TODO (zarif) : Fix this
-        // link = extractLink(sanityLink);
-        link = 'https://www.google.com';
+        link = extractLink(sanityLink);
       } else {
         link = sanityLink.externalLink!;
       }
@@ -126,15 +126,16 @@ export const CustomComponents: PortableTextComponents = {
    */
   types: {
     customImageSchema: ({ value }) => {
-      const blockImage: ISanityCustomImageSchema = value;
+      const blockImage: ISanityCustomImage = value;
       const dimensions = blockImage.imageFile?.asset?.metadata?.dimensions!;
 
       const image = generateImageUrl(blockImage.imageFile!);
+
       return (
         <figure>
           <CustomImage
-            height={dimensions.height!}
-            width={dimensions.width!}
+            height={dimensions.height}
+            width={dimensions.width}
             src={image.src}
             alt={blockImage.altDescription!}
             lqip={image.lqip}
@@ -143,16 +144,16 @@ export const CustomComponents: PortableTextComponents = {
       );
     },
     customVideoSchema: ({ value }) => {
-      const blockVideo: ISanityCustomVideoSchema = value;
+      const blockVideo: ISanityCustomVideo = value;
       const dimensions = blockVideo.imageFile?.asset?.metadata?.dimensions!;
 
       const image = generateImageUrl(blockVideo.imageFile!);
-
+      // TODO : Make video element
       return (
         <figure>
           <CustomImage
-            height={dimensions.height!}
-            width={dimensions.width!}
+            height={dimensions.height}
+            width={dimensions.width}
             src={image.src}
             alt={blockVideo.altDescription!}
             lqip={image.lqip}
@@ -165,9 +166,7 @@ export const CustomComponents: PortableTextComponents = {
 
       return (
         <div>
-          <CustomPortableText
-            content={internalBlock.contentRaw as PortableTextBlock[]}
-          />
+          <CustomPortableText content={internalBlock.content} />
         </div>
       );
     },
