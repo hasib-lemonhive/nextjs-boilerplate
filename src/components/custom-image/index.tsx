@@ -20,7 +20,7 @@ export function CustomImage(props: ICustomImage) {
       width={props.width || 612}
       src={src}
       alt={props.alt}
-      placeholder={props.lqip ? 'blur' : undefined}
+      placeholder={'blur'}
       blurDataURL={props.lqip || backupLQIP}
       onError={() => {
         setSrc('/image-error/index.jpg');
