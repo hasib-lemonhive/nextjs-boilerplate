@@ -13,6 +13,7 @@ export interface ISanityCustomImageWithAsset {
 }
 
 export interface ISanityCustomImage {
+  _type: 'customImageSchema';
   imageFile: ISanityCustomImageWithAsset;
   altDescription: string;
   figcaption?: string;
