@@ -1,9 +1,21 @@
-import { gql } from '@apollo/client';
+import { portableTextFragment } from './fragments/portable-text';
+import { groq } from 'next-sanity';
+import { linkFragment } from './fragments/link';
 
-export const PageQuery = gql`
-  query Page {
-    Page(id: "24f1e164-c6c0-419f-aced-66e2b89fea70") {
-      customPortableTextRaw
+export const PageQuery = groq`
+  *[_type == "page"][0]{
+    ...,
+    content[]{
+      ${portableTextFragment}
+    },
+    anotherRequiredLink{
+      ${linkFragment}
+    },
+    optionalLink{
+      ${linkFragment}
+    },
+    requiredLink{
+      ${linkFragment}
     }
   }
 `;
