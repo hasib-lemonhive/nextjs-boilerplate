@@ -1,11 +1,15 @@
-import { CustomOptionalLink, CustomRequiedLink } from 'src/types/index';
+import {
+  ISanityOptionalLink,
+  ISanityRequiredLink,
+  SanityLinkTypeEnum,
+} from 'src/backend/types/general/links';
 
 export function extractLink(
-  link: CustomOptionalLink | CustomRequiedLink
+  link: ISanityOptionalLink | ISanityRequiredLink
 ): string {
-  if (link.linkType === 'internalLink') {
-    return link.internalLink?.slug?.current!;
+  if (link.linkType == SanityLinkTypeEnum.Internal) {
+    return link.internalLink.slug.current;
   } else {
-    return link.externalLink!;
+    return link.externalLink;
   }
 }
