@@ -13,21 +13,7 @@ const customPortableTextRaw = [
       },
     ],
     markDefs: [],
-    style: 'h2',
-  },
-  {
-    _key: '1734cf201045',
-    _type: 'customBlock',
-    children: [
-      {
-        _key: '39e78798aabc0',
-        _type: 'span',
-        marks: [],
-        text: '',
-      },
-    ],
-    markDefs: [],
-    style: 'normal',
+    style: 'headingOne',
   },
   {
     _key: 'af61f6e66ed5',
@@ -72,7 +58,6 @@ const customPortableTextRaw = [
     style: 'normal',
   },
 ];
-
 /**
  * You should only use type assertion (as) in mock data.
  */
