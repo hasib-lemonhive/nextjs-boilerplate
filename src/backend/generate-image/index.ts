@@ -1,3 +1,4 @@
+import { client } from 'src/backend/client';
 import {
   IGeneratedImage,
   IGeneratedImageFitHeight,
@@ -22,10 +23,7 @@ import { ISanityCustomImageWithAsset } from '../types/general/image';
  *
  * So until we can come up with a custom solution, I think we should use this instead.
  */
-const builder = imageUrlBuilder({
-  projectId: 'rxvjgfhf',
-  dataset: 'production',
-});
+const builder = imageUrlBuilder(client);
 
 /**
  * This function will generate an image url and lqip for a sanity image with
