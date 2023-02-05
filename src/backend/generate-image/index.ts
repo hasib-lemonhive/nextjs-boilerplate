@@ -1,10 +1,10 @@
-import { ISanityImage } from 'src/backend/types';
 import {
   IGeneratedImage,
   IGeneratedImageFitHeight,
   IGeneratedImageFitWidth,
 } from './interface';
 import imageUrlBuilder from '@sanity/image-url';
+import { ISanityCustomImageWithAsset } from '../types/general/image';
 
 /**
  * TODO:
@@ -38,13 +38,13 @@ const builder = imageUrlBuilder({
  * @returns src, lqip, height
  */
 export function generateImageUrlWithFitWidth(
-  source: ISanityImage,
+  source: ISanityCustomImageWithAsset,
   width: number
 ): IGeneratedImageFitWidth {
   return {
     src: builder.image(source).auto('format').fit('max').width(width).url(),
-    lqip: source.asset?.metadata?.lqip!,
-    height: width / source.asset?.metadata?.dimensions?.aspectRatio!,
+    lqip: source.asset.metadata.lqip,
+    height: width / source.asset.metadata.dimensions.aspectRatio,
   };
 }
 
@@ -59,13 +59,13 @@ export function generateImageUrlWithFitWidth(
  * @returns src, lqip, width
  */
 export function generateImageUrlWithFitHeight(
-  source: ISanityImage,
+  source: ISanityCustomImageWithAsset,
   height: number
 ): IGeneratedImageFitHeight {
   return {
     src: builder.image(source).auto('format').fit('max').height(height).url(),
-    lqip: source.asset?.metadata?.lqip!,
-    width: height * source.asset?.metadata?.dimensions?.aspectRatio!,
+    lqip: source.asset.metadata.lqip,
+    width: height * source.asset.metadata.dimensions.aspectRatio,
   };
 }
 
@@ -79,13 +79,13 @@ export function generateImageUrlWithFitHeight(
  * @returns src, lqip
  */
 export function generateImageUrlFixedDimensions(
-  source: ISanityImage,
+  source: ISanityCustomImageWithAsset,
   width: number,
   height: number
 ): IGeneratedImage {
   return {
     src: builder.image(source).width(width).height(height).fit('min').url(),
-    lqip: source.asset?.metadata?.lqip!,
+    lqip: source.asset.metadata.lqip,
   };
 }
 
@@ -95,9 +95,11 @@ export function generateImageUrlFixedDimensions(
  * @param source
  * @returns src, lqip
  */
-export function generateImageUrl(source: ISanityImage): IGeneratedImage {
+export function generateImageUrl(
+  source: ISanityCustomImageWithAsset
+): IGeneratedImage {
   return {
     src: builder.image(source).url(),
-    lqip: source.asset?.metadata?.lqip!,
+    lqip: source.asset.metadata.lqip,
   };
 }
