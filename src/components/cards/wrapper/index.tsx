@@ -1,5 +1,5 @@
 import { ICardWrapper } from './interface';
-import Styles from './base-card.module.scss';
+import Styles from './card-wrapper.module.scss';
 
 interface Props extends ICardWrapper {
   children: JSX.Element;
