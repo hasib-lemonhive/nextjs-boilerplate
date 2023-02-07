@@ -1,7 +1,7 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import ExampleBody from 'src/sections/body/example';
-import ExampleFooter from 'src/sections/footer/example';
+import ExampleFooter from 'src/layout/footer/example';
 import ExampleHero from 'src/sections/hero/example';
 
 const Home: NextPage = () => {

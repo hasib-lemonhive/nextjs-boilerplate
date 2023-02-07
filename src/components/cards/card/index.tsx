@@ -1,5 +1,5 @@
 import React from 'react';
-import { CardImageDimensions, ICard } from './interfaces';
+import { CardImageDimensions, ICard } from './interface';
 import Link from 'next/link';
 import Styles from './card.module.scss';
 import { PortableText } from '@portabletext/react';
@@ -13,7 +13,7 @@ function BaseCard({ dog }: Omit<ICard, 'link'>) {
           alt={dog.image.alt}
           height={CardImageDimensions.height}
           width={CardImageDimensions.width}
-          src={dog.image.url}
+          src={dog.image.src}
           lqip={dog.image.lqip}
         />
         <div className="px-6 py-4">
@@ -41,7 +41,7 @@ function BaseCard({ dog }: Omit<ICard, 'link'>) {
 function Card({ link, dog }: ICard) {
   if (link !== undefined) {
     return (
-      <Link href={link}>
+      <Link href={link} className="inline-block">
         <BaseCard dog={dog} />
       </Link>
     );

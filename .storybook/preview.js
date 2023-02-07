@@ -5,7 +5,7 @@ import '!style-loader!css-loader!postcss-loader!tailwindcss/tailwind.css';
 
 import '../styles/globals.css';
 import { useEffect } from 'react';
-import { SetTheme } from '../src/sections/nav-bar/utils';
+import { SetTheme } from '../src/layout/nav-bar/utils';
 import { primary, secondary } from 'fonts';
 
 export const parameters = {

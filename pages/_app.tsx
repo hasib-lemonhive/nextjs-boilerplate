@@ -1,5 +1,5 @@
 import type { AppProps } from 'next/app';
-import ExampleNavbar from 'src/sections/nav-bar';
+import ExampleNavbar from 'src/layout/nav-bar';
 import { primary, secondary } from 'fonts';
 import 'styles/globals.css';
 

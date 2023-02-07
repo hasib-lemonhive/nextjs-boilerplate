@@ -1,4 +1,4 @@
-import { IDog } from './interfaces';
+import { IDog } from './interface';
 
 const customPortableTextRaw = [
   {
@@ -58,17 +58,17 @@ const customPortableTextRaw = [
     style: 'normal',
   },
 ];
+
 /**
  * You should only use type assertion (as) in mock data.
  */
-
 export const mockDog = {
   breed: 'Test Breed',
   name: 'Test Name',
   description: customPortableTextRaw,
   image: {
+    src: 'https://assets.imgix.net/unsplash/jellyfish.jpg?w=800&h=400&fit=crop&crop=entropy',
     alt: 'Test Alt',
     lqip: 'https://assets.imgix.net/unsplash/jellyfish.jpg?w=800&h=400&fit=crop&crop=entropy&px=16&blur=200&fm=webp',
-    url: 'https://assets.imgix.net/unsplash/jellyfish.jpg?w=800&h=400&fit=crop&crop=entropy',
   },
 } as IDog;

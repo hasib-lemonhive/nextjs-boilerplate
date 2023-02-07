@@ -3,10 +3,10 @@ import type { NextPage, GetServerSideProps } from 'next';
 import { client } from 'src/backend/client';
 import { DogsQuery } from 'src/backend/queries/dogs';
 import { ISanityDog } from 'src/backend/types/entities/dog';
-import Card from 'src/components/card';
+import Card from '@components/cards/card';
 import Link from 'next/link';
 import { generateImageUrlFixedDimensions } from 'src/backend/generate-image';
-import { CardImageDimensions } from '@components/card/interfaces';
+import { CardImageDimensions } from '@components/cards/card/interface';
 
 interface Props {
   dogs: ISanityDog[];
@@ -59,7 +59,7 @@ const Home: NextPage<Props> = ({ dogs }) => {
                   description: dog.description,
                   name: dog.name,
                   image: {
-                    url: image.src,
+                    src: image.src,
                     alt: dog.image.altDescription,
                     lqip: image.lqip,
                   },

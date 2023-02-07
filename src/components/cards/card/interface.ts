@@ -1,11 +1,11 @@
-import { ISanityCustomPortableText } from './../../backend/types/general/portable-text';
+import { ISanityCustomPortableText } from '../../../backend/types/general/portable-text';
 
 export interface IDog {
   name: string;
   breed: string;
   description: ISanityCustomPortableText;
   image: {
-    url: string;
+    src: string;
     alt: string;
     lqip: string;
   };
