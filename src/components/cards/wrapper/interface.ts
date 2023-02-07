@@ -1,4 +1,4 @@
-export interface IBaseCard {
+export interface ICardWrapper {
   dataTestId: string;
   cardShadow: CardShadowEnum;
   hoverCardShadow?: CardShadowEnum;

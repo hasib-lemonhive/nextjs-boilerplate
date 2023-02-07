@@ -1,7 +1,7 @@
-import { IBaseCard } from './interface';
+import { ICardWrapper } from './interface';
 import Styles from './base-card.module.scss';
 
-interface Props extends IBaseCard {
+interface Props extends ICardWrapper {
   children: JSX.Element;
 }
 
@@ -10,7 +10,7 @@ interface Props extends IBaseCard {
  * @returns JSX.Element
  * @description This component is a root card component which take a children component.
  */
-const BaseCard = ({
+const CardWrapper = ({
   children,
   dataTestId,
   cardBorderRadius,
@@ -31,4 +31,4 @@ const BaseCard = ({
   );
 };
 
-export default BaseCard;
+export default CardWrapper;
