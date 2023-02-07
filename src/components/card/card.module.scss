@@ -3,6 +3,6 @@
   transition: all ease 0.35s;
   max-width: 24rem;
   @apply rounded;
-  @apply overflow-hidden shadow-lg dark:bg-slate-600;
+  @apply overflow-hidden shadow-1;
   background-color: blueviolet;
 }
