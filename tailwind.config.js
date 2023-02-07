@@ -5,9 +5,12 @@ module.exports = {
   mode: 'jit',
   darkMode: 'class',
   content: ['./pages/*.{ts,tsx}', './src/**/**/*.{ts,tsx}'],
+  corePlugins: {
+    container: false,
+  },
   theme: {
     fontFamily: {
-      // TODO: Need discuss about naming convention
+      // TODO: Need update naming
       sans: ['var(--font-roboto)', ...fontFamily.sans],
       inter: ['var(--font-inter)', ...fontFamily.sans],
     },
@@ -18,102 +21,101 @@ module.exports = {
       xl: '1280px',
       '2xl': '1400px',
     },
-    // TODO: Need add a comments
+    colors: {
+      transparent: 'transparent',
+      current: 'currentColor',
+      primary: '#1fb6ff',
+      'primary-light': '#1fb6ff',
+      'primary-dark': '#1fb6ff',
+      secondary: '#7e5bef',
+      tertiary: '#d3dce6',
+      success: '#35B958',
+      'success-light': '#6FD189',
+      danger: '#EA4335',
+      'danger-light': '#FA6B5F',
+      warning: '#FBBC05',
+      'warning-light': '#FCCB3C',
+      black: '#000000',
+      'black-light': '#3D434F',
+      'black-dark': '#141D2E',
+      gray: '#EFF4FA',
+      'gray-light': '#F8F9FA',
+      'gray-dark': '#FBFBFB',
+      white: '#FFFFFF',
+    },
+    fontSize: {
+      sm: [
+        '0.875rem',
+        {
+          lineHeight: '1.5',
+          letterSpacing: '0.031em',
+          fontWeight: '400',
+        },
+      ],
+      base: [
+        '1rem',
+        {
+          lineHeight: '1.5',
+          letterSpacing: '0.031em',
+          fontWeight: '400',
+        },
+      ],
+      lg: [
+        '1.25rem',
+        {
+          lineHeight: '1.5',
+          letterSpacing: '0.031em',
+          fontWeight: '500',
+        },
+      ],
+      xl: [
+        '1.5rem',
+        {
+          lineHeight: '1.4',
+          fontWeight: '600',
+        },
+      ],
+      '2xl': [
+        '1.75rem',
+        {
+          lineHeight: '1.3',
+          fontWeight: '500',
+        },
+      ],
+      '3xl': [
+        '2rem',
+        {
+          lineHeight: '1.2',
+          fontWeight: '600',
+        },
+      ],
+      '4xl': [
+        '3rem',
+        {
+          lineHeight: '1.1',
+          fontWeight: '700',
+        },
+      ],
+      '5xl': [
+        '5rem',
+        {
+          lineHeight: '1.2',
+          fontWeight: '700',
+        },
+      ],
+    },
+    backgroundImage: {
+      'primary-gradient':
+        'linear-gradient(86.52deg, #0C5EE8 0.21%, #317AF5 100.21%)',
+      'primary-light-gradient':
+        'linear-gradient(86.52deg, #0C5EE8 0.21%, #317AF5 100.21%)',
+      'secondary-gradient': 'linear-gradient(180deg, #13A1C5 0%, #16B8E1 100%)',
+    },
+    boxShadow: {
+      1: '0px 11px 20px rgba(12, 94, 232, 0.16)',
+    },
     extend: {
-      // TODO: Need lift state up (fontSize,colors,backgroundImage, boxShadow)
-      fontSize: {
-        // TODO: Need discuss with Zarif Bhai
-        sm: [
-          '0.875rem',
-          {
-            lineHeight: '1.5',
-            letterSpacing: '0.031em',
-            fontWeight: '400',
-          },
-        ],
-        base: [
-          '1rem',
-          {
-            lineHeight: '1.5',
-            letterSpacing: '0.031em',
-            fontWeight: '400',
-          },
-        ],
-        lg: [
-          '1.25rem',
-          {
-            lineHeight: '1.5',
-            letterSpacing: '0.031em',
-            fontWeight: '500',
-          },
-        ],
-        xl: [
-          '1.5rem',
-          {
-            lineHeight: '1.4',
-            fontWeight: '600',
-          },
-        ],
-        '2xl': [
-          '1.75rem',
-          {
-            lineHeight: '1.3',
-            fontWeight: '500',
-          },
-        ],
-        '3xl': [
-          '2rem',
-          {
-            lineHeight: '1.2',
-            fontWeight: '600',
-          },
-        ],
-        '4xl': [
-          '3rem',
-          {
-            lineHeight: '1.1',
-            fontWeight: '700',
-          },
-        ],
-        '5xl': [
-          '5rem',
-          {
-            lineHeight: '1.2',
-            fontWeight: '700',
-          },
-        ],
-      },
-      colors: {
-        primary: '#1fb6ff',
-        'primary-light': '#1fb6ff',
-        'primary-dark': '#1fb6ff',
-        secondary: '#7e5bef',
-        tertiary: '#d3dce6',
-        success: '#35B958',
-        'success-light': '#6FD189',
-        danger: '#EA4335',
-        'danger-light': '#FA6B5F',
-        warning: '#FBBC05',
-        'warning-light': '#FCCB3C',
-        black: '#000000',
-        'black-light': '#3D434F',
-        'black-dark': '#141D2E',
-        gray: '#EFF4FA',
-        'gray-light': '#F8F9FA',
-        'gray-dark': '#FBFBFB',
-        white: '#FFFFFF',
-      },
-      backgroundImage: {
-        'primary-gradient':
-          'linear-gradient(86.52deg, #0C5EE8 0.21%, #317AF5 100.21%)',
-        'primary-light-gradient':
-          'linear-gradient(86.52deg, #0C5EE8 0.21%, #317AF5 100.21%)',
-        'secondary-gradient':
-          'linear-gradient(180deg, #13A1C5 0%, #16B8E1 100%)',
-      },
-      boxShadow: {
-        1: '0px 11px 20px rgba(12, 94, 232, 0.16)',
-      },
+      // TODO: need check max-height
       transitionProperty: {
         height: 'height',
       },
@@ -151,12 +153,17 @@ module.exports = {
         fadeInRight: 'fadeInRight .4s both',
       },
       borderRadius: {
-        // Inspired from border - https://tailwindcss.com/docs/border-width
-        5: '.3125rem', // 5px
-        10: '.625rem', // 10px
-        20: '1.25rem', // 20px
-        30: '1.875rem', // 30px
-        40: '2.5rem', // 40px
+        5: '.3125rem',
+        10: '.625rem',
+        20: '1.25rem',
+        30: '1.875rem',
+        40: '2.5rem',
+      },
+      zIndex: {
+        1: '1',
+        99: '99',
+        111: '111',
+        444: '444',
       },
     },
   },
