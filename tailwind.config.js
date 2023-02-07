@@ -9,16 +9,16 @@ module.exports = {
     container: false,
   },
   theme: {
-    fontFamily: {
-      primary: ['var(--font-primary)', ...fontFamily.sans],
-      secondary: ['var(--font-secondary)', ...fontFamily.sans],
-    },
     screens: {
       sm: '640px',
       md: '768px',
       lg: '1024px',
       xl: '1280px',
       '2xl': '1400px',
+    },
+    fontFamily: {
+      primary: ['var(--font-primary)', ...fontFamily.sans],
+      secondary: ['var(--font-secondary)', ...fontFamily.sans],
     },
     colors: {
       transparent: 'transparent',
@@ -41,6 +41,13 @@ module.exports = {
       'gray-light': '#F8F9FA',
       'gray-dark': '#FBFBFB',
       white: '#FFFFFF',
+    },
+    backgroundImage: {
+      'primary-gradient':
+        'linear-gradient(86.52deg, #0C5EE8 0.21%, #317AF5 100.21%)',
+      'primary-light-gradient':
+        'linear-gradient(86.52deg, #0C5EE8 0.21%, #317AF5 100.21%)',
+      'secondary-gradient': 'linear-gradient(180deg, #13A1C5 0%, #16B8E1 100%)',
     },
     fontSize: {
       sm: [
@@ -103,15 +110,9 @@ module.exports = {
         },
       ],
     },
-    backgroundImage: {
-      'primary-gradient':
-        'linear-gradient(86.52deg, #0C5EE8 0.21%, #317AF5 100.21%)',
-      'primary-light-gradient':
-        'linear-gradient(86.52deg, #0C5EE8 0.21%, #317AF5 100.21%)',
-      'secondary-gradient': 'linear-gradient(180deg, #13A1C5 0%, #16B8E1 100%)',
-    },
     boxShadow: {
-      1: '0px 11px 20px rgba(12, 94, 232, 0.16)',
+      1: '0 0 16px 0px rgba(12, 94, 232, 0.1)',
+      2: '0px 11px 20px rgba(12, 94, 232, 0.16)',
     },
     extend: {
       transitionProperty: {
