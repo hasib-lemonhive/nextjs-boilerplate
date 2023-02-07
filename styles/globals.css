@@ -7,17 +7,11 @@
     --transition: all 0.35s ease-in-out;
   }
   h1,
-  .h1,
   h2,
-  .h2,
   h3,
-  .h3,
   h4,
-  .h4,
   h5,
-  .h5,
-  h6,
-  .h6 {
+  h6 {
     @apply font-inter;
   }
 
@@ -42,7 +36,7 @@
 }
 
 /* 
-  Container 
+  Our custom container 
   TODO: If need please update (xl,2xl or more) as per your design, no need to touch upto lg breakpoint
 */
 .container {
@@ -82,9 +76,10 @@
 
 /* 
 TODO: If need more wider container layout, follow this convention 
-*/
-/* @media (min-width: 1600px) {
+
+@media (min-width: 1600px) {
   .container {
     @apply max-w-[1632px];
   }
-} */
+} 
+*/
