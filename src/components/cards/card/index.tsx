@@ -4,10 +4,16 @@ import Link from 'next/link';
 import Styles from './card.module.scss';
 import { PortableText } from '@portabletext/react';
 import { CustomImage } from '@components/custom-image';
+import CardWrapper from '../wrapper';
+import { CardBorderRadiusEnum, CardShadowEnum } from '../wrapper/interface';
 
 function BaseCard({ dog }: Omit<ICard, 'link'>) {
   return (
-    <div className="p-10" role="base-card">
+    <CardWrapper
+      dataTestId="card"
+      cardBorderRadius={CardBorderRadiusEnum.RadiusOne}
+      cardShadow={CardShadowEnum.ShadowOne}
+    >
       <div className={Styles.card}>
         <CustomImage
           alt={dog.image.alt}
@@ -34,7 +40,7 @@ function BaseCard({ dog }: Omit<ICard, 'link'>) {
           </span>
         </div>
       </div>
-    </div>
+    </CardWrapper>
   );
 }
 
