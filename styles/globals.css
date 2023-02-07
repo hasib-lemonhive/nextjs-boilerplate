@@ -2,11 +2,82 @@
 @tailwind components;
 @tailwind utilities;
 
-h1 {
-  @apply font-inter;
+@layer base {
+  :root {
+    --transition: all 0.35s ease-in;
+  }
+  h1,
+  .h1,
+  h2,
+  .h2,
+  h3,
+  .h3,
+  h4,
+  .h4,
+  h5,
+  .h5,
+  h6,
+  .h6 {
+    @apply font-inter;
+  }
+
+  html {
+    @apply scroll-smooth scroll-p-[6rem] lg:scroll-p-[9rem];
+  }
+
+  body,
+  p {
+    @apply font-sans text-base;
+  }
+
+  a {
+    transition: var(--transition);
+  }
 }
 
-p,
-a {
-  @apply font-sans;
+/**
+* Used in all section components
+*/
+@layer components {
+  .section-padding-primary {
+    @apply py-[3.75rem] md:py-[6.25rem] xl:py-[7.5rem];
+  }
 }
+
+/* 
+  Container 
+  TODO: If need please update (xl,2xl or more) as per your design, no need to touch upto lg breakpoint
+*/
+.container {
+  @apply w-full max-w-[672px] px-4 mx-auto;
+}
+@screen md {
+  .container {
+    @apply max-w-[800px];
+  }
+}
+
+@screen lg {
+  .container {
+    @apply max-w-[1056px];
+  }
+}
+
+@screen xl {
+  .container {
+    @apply max-w-[1312px];
+  }
+}
+
+@screen 2xl {
+  .container {
+    @apply max-w-[1432px];
+  }
+}
+
+/* If need more follow this convention  */
+/* @media (min-width: 1600px) {
+  .container {
+    @apply max-w-[1632px];
+  }
+} */
