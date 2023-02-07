@@ -2,14 +2,15 @@
  * Remeber to add these fonts in tailwind config and _app.js.
  */
 
-import { Roboto_Mono, Inter } from '@next/font/google';
+import { Roboto, Inter } from '@next/font/google';
 
-export const roboto = Roboto_Mono({
+export const primary = Roboto({
   subsets: ['latin'],
-  variable: '--font-roboto',
+  variable: '--font-primary',
+  weight: ['400', '500', '700'],
 });
 
-export const inter = Inter({
+export const secondary = Inter({
   subsets: ['latin'],
-  variable: '--font-inter',
+  variable: '--font-secondary',
 });

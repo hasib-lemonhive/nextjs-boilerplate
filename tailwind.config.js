@@ -10,9 +10,8 @@ module.exports = {
   },
   theme: {
     fontFamily: {
-      // TODO: Need update naming
-      sans: ['var(--font-roboto)', ...fontFamily.sans],
-      inter: ['var(--font-inter)', ...fontFamily.sans],
+      primary: ['var(--font-primary)', ...fontFamily.sans],
+      secondary: ['var(--font-secondary)', ...fontFamily.sans],
     },
     screens: {
       sm: '640px',
@@ -115,7 +114,6 @@ module.exports = {
       1: '0px 11px 20px rgba(12, 94, 232, 0.16)',
     },
     extend: {
-      // TODO: need check max-height
       transitionProperty: {
         height: 'height',
       },
