@@ -6,7 +6,7 @@ import '!style-loader!css-loader!postcss-loader!tailwindcss/tailwind.css';
 import '../styles/globals.css';
 import { useEffect } from 'react';
 import { SetTheme } from '../src/components/nav-bar/utils';
-import { roboto, inter } from '../fonts';
+import { primary, secondary } from 'fonts';
 
 export const parameters = {
   controls: {
@@ -42,7 +42,7 @@ const withThemeProvider = (Story, context) => {
   }, [theme]);
 
   return (
-    <div className={`${roboto.variable} ${inter.variable}`}>
+    <div className={`${primary.variable} ${secondary.variable} app-wrapper`}>
       <Story />
     </div>
   );
