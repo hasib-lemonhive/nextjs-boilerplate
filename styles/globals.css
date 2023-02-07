@@ -4,7 +4,7 @@
 
 @layer base {
   :root {
-    --transition: all 0.35s ease-in;
+    --transition: all 0.35s ease-in-out;
   }
   h1,
   .h1,
@@ -22,16 +22,13 @@
   }
 
   html {
+    /* TODO: If you have fixed navbar, please set scroll padding as per your navbar height */
     @apply scroll-smooth scroll-p-[6rem] lg:scroll-p-[9rem];
   }
 
   body,
   p {
     @apply font-sans text-base;
-  }
-
-  a {
-    transition: var(--transition);
   }
 }
 
@@ -49,33 +46,43 @@
   TODO: If need please update (xl,2xl or more) as per your design, no need to touch upto lg breakpoint
 */
 .container {
-  @apply w-full max-w-[672px] px-4 mx-auto;
+  /* local variable  */
+  --padding-left: 16px;
+  --padding-right: 16px;
+  --padding: calc(var(--padding-left) + var(--padding-right));
+
+  @apply w-full mx-auto;
+  padding-left: var(--padding-left);
+  padding-right: var(--padding-right);
+  max-width: calc(theme(screens[sm]) + var(--padding));
 }
 @screen md {
   .container {
-    @apply max-w-[800px];
+    max-width: calc(theme(screens[md]) + var(--padding));
   }
 }
 
 @screen lg {
   .container {
-    @apply max-w-[1056px];
+    max-width: calc(theme(screens[lg]) + var(--padding));
   }
 }
 
 @screen xl {
   .container {
-    @apply max-w-[1312px];
+    max-width: calc(theme(screens[xl]) + var(--padding));
   }
 }
 
 @screen 2xl {
   .container {
-    @apply max-w-[1432px];
+    max-width: calc(theme(screens[2xl]) + var(--padding));
   }
 }
 
-/* If need more follow this convention  */
+/* 
+TODO: If need more wider container layout, follow this convention 
+*/
 /* @media (min-width: 1600px) {
   .container {
     @apply max-w-[1632px];
