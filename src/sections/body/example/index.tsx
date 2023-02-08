@@ -5,10 +5,10 @@ function ExampleBody({ content }: IExampleBody) {
   return (
     <section
       role="example-body-section"
-      className="dark:bg-slate-600 bg-gray-200 h-screen flex items-center justify-center"
+      className="flex items-center justify-center h-screen section-padding-primary dark:bg-black-light bg-gray-light"
     >
       <div className="container text-center">
-        <h3 className="text-6xl pb-3">{content}</h3>
+        <h3 className="pb-3 text-6xl">{content}</h3>
       </div>
     </section>
   );

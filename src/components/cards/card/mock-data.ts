@@ -1,6 +1,6 @@
 import { IDog } from './interface';
 
-const customPortableTextRaw = [
+export const customPortableTextRaw = [
   {
     _key: '99b334a94800',
     _type: 'customBlock',

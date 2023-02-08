@@ -4,21 +4,26 @@ import { IExampleHero } from './interface';
 
 function ExampleHero({ title, description }: IExampleHero) {
   return (
-    <section role="hero" className={`dark:bg-slate-800 bg-gray-50`}>
-      <div className="mx-auto max-w-screen-xl px-4 py-32 lg:flex lg:h-screen lg:items-center">
-        <div className="mx-auto max-w-xl text-center">
-          <h1 className={`text-3xl font-extrabold sm:text-5xl`}>
+    <section
+      role="hero"
+      className={`dark:bg-black bg-gray section-padding-primary min-h-screen flex items-center`}
+    >
+      <div className="container">
+        <div className="mx-auto max-w-[800px] text-center">
+          <h1 className={`text-3xl font-extrabold sm:text-5xl dark:text-white`}>
             {title.regularPart}
             <strong className={`font-extrabold text-red-700 sm:block`}>
               {title.emphasizedPart}
             </strong>
           </h1>
 
-          <p className="mt-4 sm:text-xl sm:leading-relaxed">{description}</p>
+          <p className="mt-4 sm:text-xl sm:leading-relaxed dark:text-white">
+            {description}
+          </p>
 
-          <div className="mt-8 flex flex-wrap justify-center gap-4">
+          <div className="flex flex-wrap justify-center gap-4 mt-8">
             <Link
-              className="block w-full rounded bg-red-600 px-12 py-3 text-sm font-medium text-white shadow hover:bg-red-700 focus:outline-none focus:ring active:bg-red-500 sm:w-auto"
+              className="inline-block px-4 py-2 mt-5 text-sm font-medium text-white transition-colors ease-in-out rounded shadow dark:bg-white dark:text-danger-light dark:active:text-danger bg-primary hover:bg-danger duration-350 focus:outline-none focus:shadow-none sm:w-auto dark:hover:bg-primary dark:hover:text-white"
               href="/server-side"
             >
               Server Side Example

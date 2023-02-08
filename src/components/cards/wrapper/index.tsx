@@ -19,7 +19,7 @@ const CardWrapper = ({
 }: Props) => {
   return (
     <div
-      className={`relative overflow-hidden ${Styles['card']} ${
+      className={`relative overflow-hidden h-auto ${Styles['card']} ${
         Styles[cardBorderRadius]
       } ${Styles[cardShadow]} ${
         hoverCardShadow ? Styles[`hover-${hoverCardShadow}`] : ''

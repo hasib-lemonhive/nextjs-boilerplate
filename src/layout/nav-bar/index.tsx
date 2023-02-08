@@ -19,7 +19,7 @@ function ExampleNavbar() {
   return (
     <nav className="fixed flex items-center justify-end flex-wrap py-4 w-11/12">
       <button
-        className="text-5xl"
+        className="text-4xl"
         onClick={() => {
           if (activeTheme == 'dark') {
             SetTheme('light');
@@ -30,7 +30,15 @@ function ExampleNavbar() {
           }
         }}
       >
-        {activeTheme == 'dark' ? <MdLightMode /> : <MdDarkMode />}
+        {activeTheme == 'dark' ? (
+          <span className="text-white">
+            <MdLightMode />
+          </span>
+        ) : (
+          <span className="text-black">
+            <MdDarkMode />
+          </span>
+        )}
       </button>
     </nav>
   );

@@ -14,7 +14,7 @@ function BaseCard({ dog }: Omit<ICard, 'link'>) {
       cardBorderRadius={CardBorderRadiusEnum.RadiusOne}
       cardShadow={CardShadowEnum.ShadowOne}
     >
-      <div className={Styles.card}>
+      <div className={Styles.card + ' ' + 'h-full'}>
         <CustomImage
           alt={dog.image.alt}
           height={CardImageDimensions.height}
@@ -23,19 +23,19 @@ function BaseCard({ dog }: Omit<ICard, 'link'>) {
           lqip={dog.image.lqip}
         />
         <div className="px-6 py-4">
-          <div className="font-bold text-xl mb-2">{dog.name}</div>
-          <div className="text-gray-700 dark:text-slate-200 text-base truncate">
+          <h3 className="mb-2 text-xl font-bold">{dog.name}</h3>
+          <div className="text-base truncate">
             <PortableText value={dog.description} />
           </div>
         </div>
         <div className="px-6 pt-4 pb-2">
-          <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
+          <span className="inline-block px-3 py-1 mb-2 mr-2 text-sm font-semibold text-black rounded-full bg-warning">
             #tag1
           </span>
-          <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
+          <span className="inline-block px-3 py-1 mb-2 mr-2 text-sm font-semibold text-black rounded-full bg-danger-light">
             #tag2
           </span>
-          <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
+          <span className="inline-block px-3 py-1 mb-2 mr-2 text-sm font-semibold text-black rounded-full bg-secondary">
             #tag3
           </span>
         </div>

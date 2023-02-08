@@ -52,7 +52,7 @@ export const CustomComponents: PortableTextComponents = {
         return <br />;
       } else {
         return (
-          <h2 className="text-blue-600 text-4xl font-inter" id={_key}>
+          <h2 className="text-primary dark:text-white text-4xl" id={_key}>
             {children}
           </h2>
         );
@@ -63,7 +63,7 @@ export const CustomComponents: PortableTextComponents = {
         return <br />;
       }
       return (
-        <h2 className="text-cyan-800 text-3xl" id={_key}>
+        <h2 className="text-secondary dark:text-white text-4xl" id={_key}>
           {children}
         </h2>
       );
@@ -73,7 +73,7 @@ export const CustomComponents: PortableTextComponents = {
         return <br />;
       } else {
         return (
-          <p className="font-inter" id={_key}>
+          <p className="dark:text-white" id={_key}>
             {children}
           </p>
         );
@@ -165,7 +165,7 @@ export const CustomComponents: PortableTextComponents = {
       const internalBlock: ISanityInternalBlock = value;
 
       return (
-        <div className="bg-slate-500 rounded-lg my-4">
+        <div className="bg-primary rounded-lg my-4">
           <CustomPortableText content={internalBlock.content} />
         </div>
       );
