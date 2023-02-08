@@ -1,4 +1,4 @@
-import { fireEvent, render, waitFor } from '@testing-library/react';
+import { fireEvent, render } from '@testing-library/react';
 import { CustomImage, CustomFillImage } from '.';
 
 it('Custom Image: Renders image with appropriate src', () => {
@@ -29,12 +29,10 @@ it('Custom Image: Renders fallback image when src is broken', async () => {
     />
   );
   const element = getByRole('img');
-  fireEvent.error(element);
-  await waitFor(() =>
-    expect(element).toHaveAttribute(
-      'src',
-      'http://localhost/_next/image?url=%2Fimage-error%2Findex.jpg&w=828&q=75'
-    )
+  await fireEvent.error(element);
+  expect(element).toHaveAttribute(
+    'src',
+    'http://localhost/_next/image?url=%2Fimage-error%2Findex.jpg&w=828&q=75'
   );
   expect(element).toBeInTheDocument();
   expect(element).toMatchSnapshot();
@@ -61,12 +59,10 @@ it('Custom Fill Image: Renders fallback image when src is broken', async () => {
     <CustomFillImage alt="Test Alt" src="/invalid-src-link" />
   );
   const element = getByRole('img');
-  fireEvent.error(element);
-  await waitFor(() =>
-    expect(element).toHaveAttribute(
-      'src',
-      'http://localhost/_next/image?url=%2Fimage-error%2Findex.jpg&w=3840&q=75'
-    )
+  await fireEvent.error(element);
+  expect(element).toHaveAttribute(
+    'src',
+    'http://localhost/_next/image?url=%2Fimage-error%2Findex.jpg&w=3840&q=75'
   );
   expect(element).toBeInTheDocument();
   expect(element).toMatchSnapshot();
