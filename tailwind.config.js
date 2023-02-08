@@ -58,12 +58,13 @@ module.exports = {
       white: '#FFFFFF',
     },
     backgroundImage: {
-      'primary-gradient':
+      'primary-gradient-1':
         'linear-gradient(86.52deg, #0C5EE8 0.21%, #317AF5 100.21%)',
-      'primary-gradient-light':
+      'primary-gradient-2':
         'linear-gradient(198.61deg, #0C5EE8 12.59%, #317AF5 87.41%)',
-      'secondary-gradient': 'linear-gradient(180deg, #13A1C5 0%, #16B8E1 100%)',
-      'secondary-gradient-light':
+      'secondary-gradient-1':
+        'linear-gradient(180deg, #13A1C5 0%, #16B8E1 100%)',
+      'secondary-gradient-2':
         'linear-gradient(270deg, #16B8E1 0%, #13A1C5 100%)',
     },
     fontSize: {
