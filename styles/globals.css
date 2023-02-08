@@ -23,7 +23,7 @@
   .app-wrapper,
   body,
   p {
-    @apply font-primary text-base;
+    @apply text-base text-black font-primary dark:text-white;
   }
 }
 
