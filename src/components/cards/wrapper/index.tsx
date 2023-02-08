@@ -8,7 +8,7 @@ interface Props extends ICardWrapper {
 /**
  * @param {object}  Props
  * @returns JSX.Element
- * @description This component is a root card component which take a children component.
+ * @description This component is a card wrapper component which take a children component.
  */
 const CardWrapper = ({
   children,

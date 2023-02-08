@@ -24,7 +24,7 @@ function BaseCard({ dog }: Omit<ICard, 'link'>) {
         />
         <div className="px-6 py-4">
           <h3 className="mb-2 text-xl font-bold">{dog.name}</h3>
-          <div className="text-base truncate">
+          <div className="space-y-2 text-base line-clamp-3">
             <PortableText value={dog.description} />
           </div>
         </div>

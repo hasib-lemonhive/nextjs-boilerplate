@@ -47,7 +47,7 @@ const Home: NextPage<Props> = ({ dogs }) => {
               </Link>
             </div>
 
-            <div className="grid grid-cols-1 gap-5 mt-10 md:grid-cols-2">
+            <div className="grid grid-cols-1 gap-5 mt-10 sm:grid-cols-2">
               {dogs.map((dog: ISanityDog, index: number) => {
                 const image = generateImageUrlFixedDimensions(
                   dog.image.imageFile,

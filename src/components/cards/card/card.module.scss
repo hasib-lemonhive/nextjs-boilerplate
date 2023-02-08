@@ -1,8 +1,4 @@
 // card
 .card {
-  transition: all ease 0.35s;
-  max-width: 24rem;
-  @apply rounded;
-  @apply overflow-hidden shadow-1;
   background-color: rgb(192, 172, 211);
 }
