@@ -23,31 +23,48 @@ module.exports = {
     colors: {
       transparent: 'transparent',
       current: 'currentColor',
-      primary: '#1fb6ff',
-      'primary-light': '#1fb6ff',
-      'primary-dark': '#1fb6ff',
-      secondary: '#7e5bef',
-      tertiary: '#d3dce6',
-      success: '#35B958',
-      'success-light': '#6FD189',
-      danger: '#EA4335',
-      'danger-light': '#FA6B5F',
-      warning: '#FBBC05',
-      'warning-light': '#FCCB3C',
-      black: '#000000',
-      'black-light': '#3D434F',
-      'black-dark': '#141D2E',
-      gray: '#EFF4FA',
-      'gray-light': '#F8F9FA',
-      'gray-dark': '#FBFBFB',
+      primary: {
+        light: '#317AF5',
+        DEFAULT: '#0C5EE8',
+        medium: '#317AF5',
+      },
+      secondary: {
+        light: '#16B8E1',
+        DEFAULT: '#13A1C5',
+        medium: '#13B1C6',
+      },
+      success: {
+        light: '#6FD189',
+        DEFAULT: '#35B958',
+      },
+      danger: {
+        light: '#FA6B5F',
+        DEFAULT: '#EA4335',
+      },
+      warning: {
+        light: '#FCCB3C',
+        DEFAULT: '#FBBC05',
+      },
+      black: {
+        light: '#3D434F',
+        DEFAULT: '#000000',
+        medium: '#141D2E',
+      },
+      gray: {
+        light: '#F8F9FA',
+        DEFAULT: '#EFF4FA',
+        medium: '#FBFBFB',
+      },
       white: '#FFFFFF',
     },
     backgroundImage: {
       'primary-gradient':
         'linear-gradient(86.52deg, #0C5EE8 0.21%, #317AF5 100.21%)',
-      'primary-light-gradient':
-        'linear-gradient(86.52deg, #0C5EE8 0.21%, #317AF5 100.21%)',
+      'primary-gradient-light':
+        'linear-gradient(198.61deg, #0C5EE8 12.59%, #317AF5 87.41%)',
       'secondary-gradient': 'linear-gradient(180deg, #13A1C5 0%, #16B8E1 100%)',
+      'secondary-gradient-light':
+        'linear-gradient(270deg, #16B8E1 0%, #13A1C5 100%)',
     },
     fontSize: {
       sm: [
@@ -120,7 +137,7 @@ module.exports = {
         height: 'height',
       },
       transitionDuration: {
-        350: '350ms',
+        DEFAULT: '350ms',
         400: '400ms',
       },
       keyframes: {
