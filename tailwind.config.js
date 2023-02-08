@@ -113,6 +113,7 @@ module.exports = {
     boxShadow: {
       1: '0 0 16px 0px rgba(12, 94, 232, 0.1)',
       2: '0px 11px 20px rgba(12, 94, 232, 0.16)',
+      none: 'none',
     },
     extend: {
       transitionProperty: {
