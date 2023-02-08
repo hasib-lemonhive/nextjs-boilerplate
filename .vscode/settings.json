@@ -40,5 +40,8 @@
   "typescript.updateImportsOnFileMove.enabled": "always",
   "typescript.validate.enable": true,
   "javascript.updateImportsOnFileMove.enabled": "always",
-  "jest.autoRun": "off"
+  "jest.autoRun": "off",
+  "tailwindCSS.experimental.classRegex": [
+    ["clsx\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"]
+  ]
 }

@@ -1,3 +1,4 @@
+import clsx from 'clsx';
 import { ICardWrapper } from './interface';
 import Styles from './card-wrapper.module.scss';
 
@@ -17,15 +18,17 @@ const CardWrapper = ({
   cardShadow,
   hoverCardShadow,
 }: Props) => {
+  const cardClasses = clsx(
+    'relative',
+    'overflow-hidden',
+    'h-auto',
+    { [Styles['card']]: true },
+    { [Styles[cardShadow]]: true },
+    { [Styles[`hover-${hoverCardShadow}`]]: hoverCardShadow !== undefined },
+    { [Styles[cardBorderRadius]]: true }
+  );
   return (
-    <div
-      className={`relative overflow-hidden h-auto ${Styles['card']} ${
-        Styles[cardBorderRadius]
-      } ${Styles[cardShadow]} ${
-        hoverCardShadow ? Styles[`hover-${hoverCardShadow}`] : ''
-      }`}
-      data-testid={dataTestId}
-    >
+    <div className={cardClasses} data-testid={dataTestId}>
       {children}
     </div>
   );
