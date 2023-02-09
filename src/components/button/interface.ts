@@ -1,31 +1,31 @@
 import React from 'react';
 import { IIconNames } from './../icons/interface';
 
-type IColorScheme =
+type ColorScheme =
   | 'primary-bg-text-white'
   | 'secondary-bg-text-white'
   | 'black-bg-text-white'
   | 'white-bg-text-black';
 
-type Size = 'lg' | 'md' | 'sm' | 'xs' | '2xs';
+type Size = 'lg' | 'md' | 'sm' | 'xs';
 
 export interface IButton {
   title: string;
-  colorScheme: IColorScheme;
-  hoverColorScheme?: IColorScheme;
+  colorScheme: ColorScheme;
   size: Size;
-  iconName?: IIconNames;
-  iconIsLeft?: boolean;
   clickHandler: (
     e: React.MouseEvent<HTMLElement> | React.FormEvent<HTMLFormElement>
   ) => void;
   'data-testid': string;
+  hoverColorScheme?: ColorScheme;
+  iconName?: IIconNames;
+  iconIsLeft?: boolean;
   shiftIconOnHover?: boolean;
-  disabled?: boolean;
+  isDisabled?: boolean;
 }
 
 export interface IRedirectButton
-  extends Omit<IButton, 'clickHandler' | 'disabled'> {
+  extends Omit<IButton, 'clickHandler' | 'isDisabled'> {
   href: string;
   isOpenNewTab: boolean;
 }

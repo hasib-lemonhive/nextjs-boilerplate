@@ -1,8 +1,8 @@
 import Link from 'next/link';
+import clsx from 'clsx';
 import { IRedirectButton, IButton } from './interface';
 import Styles from './button.module.scss';
 import IconStore from '@components/icons';
-import clsx from 'clsx';
 
 /**
  * Tailwind Classes
@@ -24,10 +24,10 @@ const BaseButton = ({
   iconIsLeft,
   shiftIconOnHover,
   'data-testid': dataTestId,
-  disabled,
+  isDisabled,
 }: Omit<IButton, 'clickHandler'>) => {
   const btnClasses = clsx(
-    'relative z-10 overflow-hidden inline-flex items-center justify-center gap-3 cursor-pointer',
+    'relative z-10 group/button overflow-hidden inline-flex items-center justify-center gap-3 cursor-pointer text-white hover:text-white leading-[1.15]',
     { [Styles['button']]: true },
     { [Styles[colorScheme]]: true },
     { [Styles[`hover-${hoverColorScheme}`]]: hoverColorScheme !== undefined },
@@ -35,14 +35,17 @@ const BaseButton = ({
     { 'flex-row-reverse': iconIsLeft !== undefined },
     {
       [Styles['shift-icon-on-hover']]:
-        iconIsLeft !== undefined && shiftIconOnHover !== undefined,
+        iconName !== undefined && shiftIconOnHover !== undefined,
     },
-    { 'pointer-events-none opacity-60': disabled !== undefined }
+    { 'pointer-events-none opacity-60': isDisabled !== undefined }
   );
 
-  const btnBgClasses = clsx('absolute inset-0 ', {
-    [Styles['button-bg']]: true,
-  });
+  const btnBgClasses = clsx(
+    'absolute z-[-1] inset-0 invisible opacity-0 group-hover/button:visible group-hover/button:opacity-100',
+    {
+      [Styles['button-bg']]: true,
+    }
+  );
 
   return (
     <span className={btnClasses} data-testid={dataTestId} title={title}>
@@ -60,7 +63,7 @@ const BaseButton = ({
 // Normal Button
 const Button = (props: IButton) => {
   const btnWrapperWithNotAllowedClass = clsx(btnWrapperClasses, {
-    'cursor-not-allowed': props.disabled,
+    'cursor-not-allowed': props.isDisabled,
   });
   return (
     <button
@@ -68,7 +71,7 @@ const Button = (props: IButton) => {
       type="button"
       className={btnWrapperWithNotAllowedClass}
       onClick={(e) => {
-        if (props.disabled !== true) {
+        if (props.isDisabled !== true) {
           props.clickHandler(e);
         }
       }}
@@ -78,6 +81,7 @@ const Button = (props: IButton) => {
   );
 };
 
+// Redirect Button
 Button.RedirectButton = (props: IRedirectButton) => {
   return (
     <Link href={props.href} passHref>

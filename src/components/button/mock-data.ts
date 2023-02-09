@@ -7,6 +7,8 @@ export const buttonProps: IButton = {
   size: 'lg',
   clickHandler: () => {},
   'data-testid': 'button',
+  // iconName: 'arrow-right',
+  shiftIconOnHover: true,
 };
 
 export const redirectButtonProps: IRedirectButton = {
