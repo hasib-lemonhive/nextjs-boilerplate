@@ -169,6 +169,12 @@ module.exports = {
         fadeInDown: 'fadeInDown .4s both',
         fadeInLeft: 'fadeInLeft .4s both',
         fadeInRight: 'fadeInRight .4s both',
+        toRightFromLeft: {
+          '49%': { transform: 'translateX(100%)' },
+          '50%': { transform: 'translateX(-100%)', opacity: '0' },
+          '51%': { opacity: '1' },
+        },
+        toRightFromLeft: 'toRightFromLeft 0.5s forwards',
       },
       borderRadius: {
         5: '.3125rem',
