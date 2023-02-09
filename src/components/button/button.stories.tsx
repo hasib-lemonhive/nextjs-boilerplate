@@ -1,6 +1,6 @@
 import Component from '.';
 import { Meta, StoryObj } from '@storybook/react';
-import { buttonProps } from './mock-data';
+import { buttonProps, redirectButtonProps } from './mock-data';
 import { buttonColorSchemes, buttonSizes } from './interface';
 
 const meta: Meta<typeof Component> = {
@@ -12,10 +12,10 @@ const meta: Meta<typeof Component> = {
     },
     hoverColorScheme: {
       control: 'select',
-      options: [...Object.values(buttonColorSchemes)],
+      options: [undefined, ...Object.values(buttonColorSchemes)],
     },
     size: {
-      control: 'inline-radio',
+      control: 'radio',
       options: [...Object.values(buttonSizes)],
     },
     'data-testid': {
@@ -25,12 +25,24 @@ const meta: Meta<typeof Component> = {
     },
   },
   parameters: {
-    layout: 'centered',
+    layout: 'full',
   },
+  decorators: [
+    (Story) => (
+      <div className="py-10">
+        <div className="container">
+          <Story />
+        </div>
+      </div>
+    ),
+  ],
 };
 
 export default meta;
 
 export const Primary: StoryObj<typeof Component> = {
   args: { ...buttonProps },
+};
+export const Redirect: StoryObj<typeof Component.Redirect> = {
+  args: { ...redirectButtonProps },
 };

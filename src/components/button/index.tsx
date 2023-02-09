@@ -16,7 +16,7 @@ const btnWrapperClasses = clsx(
  * @returns JSX.Element
  */
 const BaseButton = ({
-  title,
+  label,
   colorScheme,
   size,
   hoverColorScheme,
@@ -48,8 +48,8 @@ const BaseButton = ({
   );
 
   return (
-    <span className={btnClasses} data-testid={dataTestId} title={title}>
-      <span>{title}</span>
+    <span className={btnClasses} data-testid={dataTestId} aria-label={label}>
+      <span>{label}</span>
       {iconName !== undefined && (
         <span className={Styles['button-icon']}>
           <IconStore iconName={iconName} />
@@ -82,7 +82,7 @@ const Button = (props: IButton) => {
 };
 
 // Redirect Button
-Button.RedirectButton = (props: IRedirectButton) => {
+Button.Redirect = (props: IRedirectButton) => {
   return (
     <Link href={props.href} passHref>
       <a
