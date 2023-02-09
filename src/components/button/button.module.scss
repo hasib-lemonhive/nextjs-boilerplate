@@ -11,21 +11,44 @@
 
   // primary-bg-text-white
   &.primary-bg-text-white {
-    @apply bg-primary;
+    @apply bg-primary text-white;
   }
   &.hover-primary-bg-text-white {
+    @apply hover:text-white;
     .button-bg {
       @apply bg-primary;
+    }
+  }
+  // secondary-bg-text-white
+  &.secondary-bg-text-white {
+    @apply bg-secondary text-white;
+  }
+  &.hover-secondary-bg-text-white {
+    @apply hover:text-white;
+    .button-bg {
+      @apply bg-secondary;
     }
   }
 
   // black-bg-text-white
   &.black-bg-text-white {
-    @apply bg-black;
+    @apply bg-black text-white;
   }
   &.hover-black-bg-text-white {
+    @apply hover:text-white;
     .button-bg {
       @apply bg-black;
+    }
+  }
+
+  // white-bg-text-black
+  &.white-bg-text-black {
+    @apply bg-white text-black;
+  }
+  &.hover-white-bg-text-black {
+    @apply hover:text-black;
+    .button-bg {
+      @apply bg-white;
     }
   }
 
