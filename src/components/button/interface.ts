@@ -7,7 +7,15 @@ type ColorScheme =
   | 'black-bg-text-white'
   | 'white-bg-text-black';
 
-type Size = 'lg' | 'md' | 'sm' | 'xs';
+// type Size = 'lg' | 'md' | 'sm' | 'xs';
+export const SizeValues = {
+  lg: 'lg',
+  md: 'md',
+  sm: 'sm',
+  xs: 'xs',
+} as const;
+type sizeKeys = keyof typeof SizeValues;
+type Size = (typeof SizeValues)[sizeKeys];
 
 export interface IButton {
   title: string;
