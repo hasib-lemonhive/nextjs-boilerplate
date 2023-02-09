@@ -14,6 +14,7 @@
 
 */
 import React from 'react';
+import clsx from 'clsx';
 import { CustomPortableText } from '.';
 import { PortableTextComponents } from '@portabletext/react';
 import { extractLink } from 'src/utils/extract-link';
@@ -27,6 +28,14 @@ import {
 import { ISanityCustomImage } from 'src/backend/types/general/image';
 import { ISanityCustomVideo } from 'src/backend/types/general/video';
 import { ISanityInternalBlock } from 'src/backend/types/general/internal-block';
+
+/**
+ * Tailwind Classes
+ */
+const highLightColor1 = clsx('text-primary');
+const highLightColor2 = clsx('text-secondary');
+const headingLevel1 = clsx('text-3xl lg:text-4xl  dark:text-white');
+const headingLevel2 = clsx('text-2xl lg:text-3xl  dark:text-white');
 
 /**
  * This function will return true if a block contains one child
@@ -52,7 +61,7 @@ export const CustomComponents: PortableTextComponents = {
         return <br />;
       } else {
         return (
-          <h2 className="text-primary dark:text-white text-4xl" id={_key}>
+          <h2 className={`${headingLevel1} ${highLightColor1}`} id={_key}>
             {children}
           </h2>
         );
@@ -63,13 +72,13 @@ export const CustomComponents: PortableTextComponents = {
         return <br />;
       }
       return (
-        <h2 className="text-secondary dark:text-white text-4xl" id={_key}>
+        <h2 className={`${headingLevel2} ${highLightColor2}`} id={_key}>
           {children}
         </h2>
       );
     },
     normal: ({ children, value: { _key } }) => {
-      if (React.Children.count(children) == 1 && children?.toString() == '') {
+      if (isEmptyBlock(children)) {
         return <br />;
       } else {
         return (
@@ -165,7 +174,7 @@ export const CustomComponents: PortableTextComponents = {
       const internalBlock: ISanityInternalBlock = value;
 
       return (
-        <div className="bg-primary rounded-lg my-4">
+        <div className="my-4 rounded-lg bg-primary">
           <CustomPortableText content={internalBlock.content} />
         </div>
       );
