@@ -26,7 +26,7 @@ type sizeKeys = keyof typeof buttonSizes;
 type Size = (typeof buttonSizes)[sizeKeys];
 
 export interface IButton {
-  title: string;
+  label: string;
   colorScheme: ColorScheme;
   size: Size;
   clickHandler: (
