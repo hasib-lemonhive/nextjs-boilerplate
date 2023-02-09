@@ -67,7 +67,6 @@ const Button = (props: IButton) => {
   });
   return (
     <button
-      role="button"
       type="button"
       className={btnWrapperWithNotAllowedClass}
       onClick={(e) => {
