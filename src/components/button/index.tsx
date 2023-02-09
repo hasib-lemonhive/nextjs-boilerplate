@@ -7,7 +7,9 @@ import clsx from 'clsx';
 /**
  * Tailwind Classes
  */
-const btnWrapperClasses = clsx(`inline-flex`);
+const btnWrapperClasses = clsx(
+  `inline-flex focus:outline-none focus-visible:outline-none focus:shadow-none focus-visible:shadow-none`
+);
 
 /**
  * @param {object}  Omit<IButton, 'clickHandler'>
@@ -61,7 +63,9 @@ const Button = (props: IButton) => {
     'cursor-not-allowed': props.disabled,
   });
   return (
-    <span
+    <button
+      role="button"
+      type="button"
       className={btnWrapperWithNotAllowedClass}
       onClick={(e) => {
         if (props.disabled !== true) {
@@ -70,7 +74,7 @@ const Button = (props: IButton) => {
       }}
     >
       <BaseButton {...props} />
-    </span>
+    </button>
   );
 };
 
