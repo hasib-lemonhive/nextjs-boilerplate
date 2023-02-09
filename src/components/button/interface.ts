@@ -1,5 +1,5 @@
 import React from 'react';
-import { IIconNames } from './../icons/interface';
+import { IconNames } from './../icons/interface';
 
 type ColorScheme =
   | 'primary-bg-text-white'
@@ -26,7 +26,7 @@ export interface IButton {
   ) => void;
   'data-testid': string;
   hoverColorScheme?: ColorScheme;
-  iconName?: IIconNames;
+  iconName?: IconNames;
   iconIsLeft?: boolean;
   shiftIconOnHover?: boolean;
   isDisabled?: boolean;

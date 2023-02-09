@@ -1,10 +1,10 @@
-import { IIconNames } from './interface';
+import { IconNames } from './interface';
 import { ErrorVector } from './sub-components/error';
 import { NoDataVector } from './sub-components/no-data';
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 
 interface IIconStoreProps {
-  iconName: IIconNames;
+  iconName: IconNames;
 }
 
 /**
