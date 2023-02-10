@@ -7,7 +7,7 @@
     components={myPortableTextComponents}
   />
 
-    Relevant links: 
+    Relevant links:
     https://portabletext.github.io/types/ (types)
     https://www.npmjs.com/package/@portabletext/react (components)
     https://www.npmjs.com/package/@portabletext/react
@@ -16,7 +16,7 @@
 import React from 'react';
 import { CustomPortableText } from '.';
 import { PortableTextComponents } from '@portabletext/react';
-import { extractLink } from 'src/utils/extract-link';
+import { extractLinkGlobal } from 'src/utils/extract-link';
 import { LinkWrapper } from '@components/link-wrapper';
 import { CustomImage } from '@components/custom-image';
 import { generateImageUrl } from 'src/backend/generate-image';
@@ -94,7 +94,7 @@ export const CustomComponents: PortableTextComponents = {
 
       let link;
       if (sanityLink.linkType == 'internalLink') {
-        link = extractLink(sanityLink);
+        link = extractLinkGlobal(sanityLink);
       } else {
         link = sanityLink.externalLink!;
       }
