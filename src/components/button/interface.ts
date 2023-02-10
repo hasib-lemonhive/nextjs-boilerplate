@@ -1,29 +1,18 @@
 import React from 'react';
 import { IconNames } from './../icons/interface';
 
-// type ColorScheme =
-//   | 'primary-bg-text-white'
-//   | 'secondary-bg-text-white'
-//   | 'black-bg-text-white'
-//   | 'white-bg-text-black';
-export const buttonColorSchemes = {
-  primaryBgTextWhite: 'primary-bg-text-white',
-  secondaryBgTextWhite: 'secondary-bg-text-white',
-  blackBgTextWhite: 'black-bg-text-white',
-  whiteBgTextBlack: 'white-bg-text-black',
-} as const;
-type colorSchemeKeys = keyof typeof buttonColorSchemes;
-type ColorScheme = (typeof buttonColorSchemes)[colorSchemeKeys];
+// TODO: Implement Outline buttons
 
-// type Size = 'lg' | 'md' | 'sm' | 'xs';
-export const buttonSizes = {
-  lg: 'lg',
-  md: 'md',
-  sm: 'sm',
-  xs: 'xs',
-} as const;
-type sizeKeys = keyof typeof buttonSizes;
-type Size = (typeof buttonSizes)[sizeKeys];
+export const buttonColorSchemes = [
+  'primary-bg-text-white',
+  'secondary-bg-text-white',
+  'black-bg-text-white',
+  'white-bg-text-black',
+] as const;
+type ColorScheme = (typeof buttonColorSchemes)[number];
+
+export const buttonSizes = ['lg', 'md', 'sm', 'xs'] as const;
+type Size = (typeof buttonSizes)[number];
 
 export interface IButton {
   label: string;
