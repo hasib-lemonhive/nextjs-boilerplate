@@ -8,15 +8,15 @@ const meta: Meta<typeof Component> = {
   argTypes: {
     colorScheme: {
       control: 'select',
-      options: [...Object.values(buttonColorSchemes)],
+      options: [...buttonColorSchemes],
     },
     hoverColorScheme: {
       control: 'select',
-      options: [undefined, ...Object.values(buttonColorSchemes)],
+      options: [undefined, ...buttonColorSchemes],
     },
     size: {
       control: 'radio',
-      options: [...Object.values(buttonSizes)],
+      options: [...buttonSizes],
     },
     'data-testid': {
       table: {
