@@ -8,14 +8,6 @@ import imageUrlBuilder from '@sanity/image-url';
 import { ISanityCustomImageWithAsset } from '../types/general/image';
 
 /**
- * TODO:
- * When starting a new project please update the project id and dataset.
- * This cannot be done with env as it causes hydration issues.
- *
- * TODO: Look into hydration issues.
- */
-
-/**
  * This is a sanity package to fetch sanity images.
  *
  * It is difficult to fetch a sanity image while respecting the crop
