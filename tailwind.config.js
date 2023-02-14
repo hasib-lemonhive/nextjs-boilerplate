@@ -66,6 +66,7 @@ module.exports = {
         'linear-gradient(180deg, #13A1C5 0%, #16B8E1 100%)',
       'secondary-gradient-2':
         'linear-gradient(270deg, #16B8E1 0%, #13A1C5 100%)',
+      'link-gradient-1': 'linear-gradient(to right, #FBBC05, #FBBC05)',
     },
     fontSize: {
       sm: [

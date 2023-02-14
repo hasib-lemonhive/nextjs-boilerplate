@@ -3,17 +3,20 @@ import { ILinkWrapper } from './interface';
 export const linkArgs: ILinkWrapper[] = [
   {
     href: 'https://www.google.com',
-    openNewTab: true,
+    isOpenNewTab: true,
     children: <p>Test</p>,
+    isStyled: true,
   },
   {
     href: 'https://www.bing.com',
-    openNewTab: true,
+    isOpenNewTab: true,
     children: <p>Test</p>,
+    isStyled: false,
   },
   {
     href: 'https://www.google.com',
-    openNewTab: false,
+    isOpenNewTab: false,
     children: <p>Test</p>,
+    isStyled: true,
   },
 ];

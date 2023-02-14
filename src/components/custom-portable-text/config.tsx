@@ -109,7 +109,7 @@ export const CustomComponents: PortableTextComponents = {
       }
 
       return (
-        <LinkWrapper href={link} openNewTab={false}>
+        <LinkWrapper href={link} isOpenNewTab={false}>
           <span>{children}</span>
         </LinkWrapper>
       );

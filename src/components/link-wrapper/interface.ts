@@ -3,5 +3,6 @@ import { ReactNode } from 'react';
 export interface ILinkWrapper {
   href: string;
   children: ReactNode;
-  openNewTab: boolean;
+  isOpenNewTab: boolean;
+  isStyled?: boolean;
 }

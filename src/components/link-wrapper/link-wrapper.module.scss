@@ -1,0 +1,24 @@
+/**
+* The :global() function is used to access global classes.
+*/
+
+.link {
+  @apply text-black inline-block;
+  transition: var(--transition);
+  > span {
+    background-size: calc(100% - 10px) 8px;
+    background-repeat: no-repeat;
+    background-position: right 100%;
+    @apply inline bg-link-gradient-1;
+    transition: background-size 0.35s cubic-bezier(0.25, 0.1, 0, 2.05);
+  }
+  &:hover {
+    > span {
+      background-size: 100% 100%;
+    }
+  }
+
+  :global(.dark) & {
+    @apply text-white;
+  }
+}

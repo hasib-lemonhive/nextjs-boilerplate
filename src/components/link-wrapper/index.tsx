@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import { ILinkWrapper } from './interface';
+import Styles from './link-wrapper.module.scss';
+import clsx from 'clsx';
 
 /**
  * This component will wrap its children with a next link.
@@ -8,23 +10,26 @@ import { ILinkWrapper } from './interface';
  * @param href
  * @param openNewTab
  * @param children
+ * @param isStyled
  * @returns
  */
 
-/**
- * TODO:
- * Rabbani - apply tailwind styles and see it effect cards and link text
- * wrapped with this element.
- */
-export function LinkWrapper({ href, openNewTab, children }: ILinkWrapper) {
+export function LinkWrapper({
+  href,
+  isOpenNewTab,
+  children,
+  isStyled = true,
+}: ILinkWrapper) {
+  const styled = isStyled !== undefined && isStyled;
+  const btnClasses = clsx({ [Styles['link']]: styled });
   return (
     <Link
-      className="text-cyan-500 underline"
+      className={btnClasses}
       href={href}
-      target={openNewTab ? '_blank' : '_self'}
+      target={isOpenNewTab ? '_blank' : '_self'}
       rel={href.startsWith('/') ? 'noreferrer noopener' : undefined}
     >
-      {children}
+      {styled ? <span>{children}</span> : <>{children}</>}
     </Link>
   );
 }
