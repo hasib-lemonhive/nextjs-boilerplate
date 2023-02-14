@@ -52,6 +52,22 @@
     }
   }
 
+  &.outline {
+    @apply border border-primary text-primary;
+    &.transparent-bg-text-primary {
+      @apply border-primary text-primary;
+    }
+    &.hover-transparent-bg-text-primary {
+      @apply hover:border-primary hover:bg-transparent hover:text-primary;
+    }
+    &.transparent-bg-text-secondary {
+      @apply border-secondary text-secondary;
+    }
+    &.hover-transparent-bg-text-secondary {
+      @apply hover:border-secondary hover:bg-transparent hover:text-secondary;
+    }
+  }
+
   //  Button Sizes
 
   // size - lg
