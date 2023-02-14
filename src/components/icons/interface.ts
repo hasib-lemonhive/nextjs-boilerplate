@@ -1,5 +1,8 @@
-type ArrowIcon = 'arrow-left' | 'arrow-right';
-type ChevronIcon = 'chevron-left' | 'chevron-right';
-type VectorIcon = 'error-vector' | 'no-data-vector';
+type ArrowIcons = 'Arrow Left' | 'Arrow Right';
+type ChevronIcons = 'Chevron Left' | 'Chevron Right';
+type VectorIcons = 'Error Vector' | 'No Data Vector';
 
-export type IconNames = ArrowIcon | ChevronIcon | VectorIcon;
+export const icons = ['Train', 'Airplane', 'Rocket'] as const;
+type Icons = (typeof icons)[number];
+
+export type IconNames = Icons | ArrowIcons | ChevronIcons | VectorIcons;

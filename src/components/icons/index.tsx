@@ -2,6 +2,8 @@ import { IconNames } from './interface';
 import { ErrorVector } from './sub-components/error';
 import { NoDataVector } from './sub-components/no-data';
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
+import { RiPlaneFill, RiTrainFill } from 'react-icons/ri';
+import { IoIosRocket } from 'react-icons/io';
 
 interface IIconStoreProps {
   iconName: IconNames;
@@ -15,22 +17,31 @@ interface IIconStoreProps {
  */
 const IconStore = ({ iconName }: IIconStoreProps) => {
   switch (iconName) {
-    case 'error-vector': {
+    case 'Error Vector': {
       return <ErrorVector />;
     }
-    case 'no-data-vector': {
+    case 'No Data Vector': {
       return <NoDataVector />;
     }
-    case 'arrow-left': {
+    case 'Train': {
+      return <RiTrainFill />;
+    }
+    case 'Airplane': {
+      return <RiPlaneFill />;
+    }
+    case 'Rocket': {
+      return <IoIosRocket />;
+    }
+    case 'Arrow Left': {
       return <FaArrowLeft />;
     }
-    case 'arrow-right': {
+    case 'Arrow Right': {
       return <FaArrowRight />;
     }
-    case 'chevron-left': {
+    case 'Chevron Left': {
       return <FaArrowLeft />;
     }
-    case 'chevron-right': {
+    case 'Chevron Right': {
       return <FaArrowRight />;
     }
   }
