@@ -1,8 +1,6 @@
 import React from 'react';
 import { IconNames } from './../icons/interface';
 
-// TODO: Implement Outline buttons
-
 export const buttonColorSchemes = [
   'primary-bg-text-white',
   'secondary-bg-text-white',
@@ -18,9 +16,6 @@ export const outlineButtonColorSchemes = [
   'transparent-bg-text-black',
 ] as const;
 type OutlineColorScheme = (typeof outlineButtonColorSchemes)[number];
-
-export const buttonVariants = ['fill', 'outline'] as const;
-type Variants = (typeof buttonVariants)[number];
 
 export const buttonSizes = ['lg', 'md', 'sm', 'xs'] as const;
 type Size = (typeof buttonSizes)[number];
@@ -38,7 +33,7 @@ export interface IFillButton {
   iconIsLeft?: boolean;
   shiftIconOnHover?: boolean;
   isDisabled?: boolean;
-  variant: Variants;
+  variant: 'fill';
 }
 
 export interface IFillRedirectButton
@@ -48,10 +43,10 @@ export interface IFillRedirectButton
 }
 
 export interface IOutlineButton
-  extends Omit<IFillButton, 'colorScheme' | 'hoverColorScheme'> {
+  extends Omit<IFillButton, 'colorScheme' | 'hoverColorScheme' | 'variant'> {
   colorScheme: OutlineColorScheme;
   hoverColorScheme: OutlineColorScheme;
-  // variant: 'outline';
+  variant: 'outline';
 }
 
 export interface IOutlineRedirectButton

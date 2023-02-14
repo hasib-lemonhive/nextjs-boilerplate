@@ -1,6 +1,11 @@
 import Component from '.';
 import { Meta, StoryObj } from '@storybook/react';
-import { buttonProps, redirectButtonProps } from './mock-data';
+import {
+  buttonProps,
+  outlineButtonProps,
+  redirectButtonProps,
+  redirectOutlineButtonProps,
+} from './mock-data';
 import { buttonColorSchemes, buttonSizes } from './interface';
 
 const meta: Meta<typeof Component> = {
@@ -19,6 +24,15 @@ const meta: Meta<typeof Component> = {
       options: [...buttonSizes],
     },
     'data-testid': {
+      table: {
+        disable: true,
+      },
+    },
+    iconName: {
+      control: 'select',
+      options: [undefined, 'Arrow Right', 'Arrow Left'],
+    },
+    variant: {
       table: {
         disable: true,
       },
@@ -45,4 +59,10 @@ export const Primary: StoryObj<typeof Component> = {
 };
 export const Redirect: StoryObj<typeof Component.Redirect> = {
   args: { ...redirectButtonProps },
+};
+export const Outline: StoryObj<typeof Component> = {
+  args: { ...outlineButtonProps },
+};
+export const OutlineRedirect: StoryObj<typeof Component.Redirect> = {
+  args: { ...redirectOutlineButtonProps },
 };

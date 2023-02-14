@@ -11,8 +11,7 @@ export const buttonProps: IFillButton = {
   hoverColorScheme: 'secondary-bg-text-white',
   size: 'lg',
   clickHandler: () => {},
-  'data-testid': 'button',
-  iconName: 'arrow-right',
+  'data-testid': 'fill-button',
   shiftIconOnHover: true,
   variant: 'fill',
 };
@@ -24,27 +23,27 @@ export const redirectButtonProps: IFillRedirectButton = {
   colorScheme: 'primary-bg-text-white',
   hoverColorScheme: 'secondary-bg-text-white',
   size: 'lg',
-  'data-testid': 'redirect-button',
+  'data-testid': 'fill-redirect-button',
   variant: 'fill',
 };
 
 export const outlineButtonProps: IOutlineButton = {
   label: 'Outline Button',
   colorScheme: 'transparent-bg-text-primary',
-  hoverColorScheme: 'transparent-bg-text-primary',
+  hoverColorScheme: 'transparent-bg-text-secondary',
   size: 'lg',
   clickHandler: () => {},
-  'data-testid': 'redirect-button',
+  'data-testid': 'outline-button',
   variant: 'outline',
 };
 
 export const redirectOutlineButtonProps: IOutlineRedirectButton = {
   href: 'https://www.google.com/',
   isOpenNewTab: true,
-  label: 'Redirect Button',
+  label: 'Outline Redirect Button',
   colorScheme: 'transparent-bg-text-primary',
-  hoverColorScheme: 'transparent-bg-text-primary',
+  hoverColorScheme: 'transparent-bg-text-secondary',
   size: 'lg',
-  'data-testid': 'redirect-button',
+  'data-testid': 'outline-redirect-button',
   variant: 'outline',
 };

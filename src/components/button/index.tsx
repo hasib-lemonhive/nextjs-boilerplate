@@ -1,14 +1,14 @@
 import Link from 'next/link';
 import clsx from 'clsx';
 import {
-  IFillRedirectButton,
+  IBaseButton,
   IFillButton,
+  IFillRedirectButton,
   IOutlineButton,
   IOutlineRedirectButton,
-  IBaseButton,
 } from './interface';
-import Styles from './button.module.scss';
 import IconStore from '@components/icons';
+import Styles from './button.module.scss';
 
 /**
  * Tailwind Classes
@@ -36,7 +36,7 @@ const BaseButton = ({
   const btnClasses = clsx(
     'relative z-10 group/button overflow-hidden inline-flex items-center justify-center gap-3 cursor-pointer text-white hover:text-white leading-[1.15]',
     { [Styles['button']]: true },
-    { [Styles['outline']]: variant == 'outline' },
+    { [Styles['outline']]: variant === 'outline' },
     { [Styles[colorScheme]]: true },
     { [Styles[`hover-${hoverColorScheme}`]]: hoverColorScheme !== undefined },
     { [Styles[size]]: true },
@@ -101,39 +101,5 @@ Button.Redirect = (props: IFillRedirectButton | IOutlineRedirectButton) => {
     </Link>
   );
 };
-
-// // Outline Button
-// export const OutlineButton = (props: IOutlineButton) => {
-//   const btnWrapperWithNotAllowedClass = clsx(btnWrapperClasses, {
-//     'cursor-not-allowed': props.isDisabled,
-//   });
-//   return (
-//     <button
-//       type="button"
-//       className={btnWrapperWithNotAllowedClass}
-//       onClick={(e) => {
-//         if (props.isDisabled !== true) {
-//           props.clickHandler(e);
-//         }
-//       }}
-//     >
-//       <BaseButton variant="outline" {...props} />
-//     </button>
-//   );
-// };
-
-// // Redirect Outline Button
-// OutlineButton.Redirect = (props: IOutlineRedirectButton) => {
-//   return (
-//     <Link
-//       href={props.href}
-//       className={btnWrapperClasses}
-//       target={props.isOpenNewTab ? '_blank' : '_self'}
-//       passHref
-//     >
-//       <BaseButton {...props} />
-//     </Link>
-//   );
-// };
 
 export default Button;
