@@ -40,10 +40,10 @@ const BaseButton = ({
     { [Styles[colorScheme]]: true },
     { [Styles[`hover-${hoverColorScheme}`]]: hoverColorScheme !== undefined },
     { [Styles[size]]: true },
-    { 'flex-row-reverse': iconIsLeft !== undefined },
+    { 'flex-row-reverse': iconName !== undefined && iconIsLeft },
     {
       [Styles['shift-icon-on-hover']]:
-        iconName !== undefined && shiftIconOnHover !== undefined,
+        iconName !== undefined && shiftIconOnHover,
     },
     { 'pointer-events-none opacity-60': isDisabled !== undefined }
   );
