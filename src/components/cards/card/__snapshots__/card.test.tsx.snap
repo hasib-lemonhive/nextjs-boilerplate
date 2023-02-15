@@ -1,0 +1,131 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders card correctly 1`] = `
+<div
+  class="relative overflow-hidden h-auto card shadow-one radius-one"
+  data-testid="card"
+>
+  <div
+    class="card h-full"
+  >
+    <img
+      alt="Test Alt"
+      data-nimg="1"
+      decoding="async"
+      height="400"
+      loading="lazy"
+      src="http://localhost/_next/image?url=https%3A%2F%2Fassets.imgix.net%2Funsplash%2Fjellyfish.jpg%3Fw%3D800%26h%3D400%26fit%3Dcrop%26crop%3Dentropy&w=1200&q=75"
+      srcset="/_next/image?url=https%3A%2F%2Fassets.imgix.net%2Funsplash%2Fjellyfish.jpg%3Fw%3D800%26h%3D400%26fit%3Dcrop%26crop%3Dentropy&w=640&q=75 1x, /_next/image?url=https%3A%2F%2Fassets.imgix.net%2Funsplash%2Fjellyfish.jpg%3Fw%3D800%26h%3D400%26fit%3Dcrop%26crop%3Dentropy&w=1200&q=75 2x"
+      style="color: transparent; background-size: cover; background-position: 50% 50%; background-repeat: no-repeat;"
+      width="600"
+    />
+    <div
+      class="px-6 py-4"
+    >
+      <h3
+        class="mb-2 text-xl font-bold"
+      >
+        Test Name
+      </h3>
+      <div
+        class="space-y-2 text-base line-clamp-3"
+      >
+        <p>
+          About the Breed
+        </p>
+        <p>
+          The Alaskan Klee Kai is a small-sized companion dog that is alert, energetic, and curious, yet reserved with unfamiliar people and situations.
+        </p>
+        <p>
+          The Alaskan Klee Kai is a small sized companion dog with a smooth, agile, and well-balanced gait, a body that is well proportioned with a level topline and a length slightly longer than height. The wedge-shaped head, erect triangle shaped ears, well furred double coat in three symmetrical contrasting color varieties, and a loosely curled tail reflect its arctic heritage.
+        </p>
+        <p />
+      </div>
+    </div>
+    <div
+      class="px-6 pt-4 pb-2"
+    >
+      <span
+        class="inline-block px-3 py-1 mb-2 mr-2 text-sm font-semibold text-black rounded-full bg-warning"
+      >
+        #tag1
+      </span>
+      <span
+        class="inline-block px-3 py-1 mb-2 mr-2 text-sm font-semibold text-black rounded-full bg-danger-light"
+      >
+        #tag2
+      </span>
+      <span
+        class="inline-block px-3 py-1 mb-2 mr-2 text-sm font-semibold text-black rounded-full bg-secondary"
+      >
+        #tag3
+      </span>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders card correctly with link 1`] = `
+<div
+  class="relative overflow-hidden h-auto card shadow-one radius-one"
+  data-testid="card"
+>
+  <div
+    class="card h-full"
+  >
+    <img
+      alt="Test Alt"
+      data-nimg="1"
+      decoding="async"
+      height="400"
+      loading="lazy"
+      src="http://localhost/_next/image?url=https%3A%2F%2Fassets.imgix.net%2Funsplash%2Fjellyfish.jpg%3Fw%3D800%26h%3D400%26fit%3Dcrop%26crop%3Dentropy&w=1200&q=75"
+      srcset="/_next/image?url=https%3A%2F%2Fassets.imgix.net%2Funsplash%2Fjellyfish.jpg%3Fw%3D800%26h%3D400%26fit%3Dcrop%26crop%3Dentropy&w=640&q=75 1x, /_next/image?url=https%3A%2F%2Fassets.imgix.net%2Funsplash%2Fjellyfish.jpg%3Fw%3D800%26h%3D400%26fit%3Dcrop%26crop%3Dentropy&w=1200&q=75 2x"
+      style="color: transparent; background-size: cover; background-position: 50% 50%; background-repeat: no-repeat;"
+      width="600"
+    />
+    <div
+      class="px-6 py-4"
+    >
+      <h3
+        class="mb-2 text-xl font-bold"
+      >
+        Test Name
+      </h3>
+      <div
+        class="space-y-2 text-base line-clamp-3"
+      >
+        <p>
+          About the Breed
+        </p>
+        <p>
+          The Alaskan Klee Kai is a small-sized companion dog that is alert, energetic, and curious, yet reserved with unfamiliar people and situations.
+        </p>
+        <p>
+          The Alaskan Klee Kai is a small sized companion dog with a smooth, agile, and well-balanced gait, a body that is well proportioned with a level topline and a length slightly longer than height. The wedge-shaped head, erect triangle shaped ears, well furred double coat in three symmetrical contrasting color varieties, and a loosely curled tail reflect its arctic heritage.
+        </p>
+        <p />
+      </div>
+    </div>
+    <div
+      class="px-6 pt-4 pb-2"
+    >
+      <span
+        class="inline-block px-3 py-1 mb-2 mr-2 text-sm font-semibold text-black rounded-full bg-warning"
+      >
+        #tag1
+      </span>
+      <span
+        class="inline-block px-3 py-1 mb-2 mr-2 text-sm font-semibold text-black rounded-full bg-danger-light"
+      >
+        #tag2
+      </span>
+      <span
+        class="inline-block px-3 py-1 mb-2 mr-2 text-sm font-semibold text-black rounded-full bg-secondary"
+      >
+        #tag3
+      </span>
+    </div>
+  </div>
+</div>
+`;
