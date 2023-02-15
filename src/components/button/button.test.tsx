@@ -1,7 +1,15 @@
 import { render, fireEvent } from '@testing-library/react';
 import Button from '.';
-import { buttonProps, redirectButtonProps } from './mock-data';
-import { buttonColorSchemes, buttonSizes } from './interface';
+import {
+  buttonProps,
+  outlineButtonProps,
+  redirectButtonProps,
+} from './mock-data';
+import {
+  buttonColorSchemes,
+  buttonSizes,
+  outlineButtonColorSchemes,
+} from './interface';
 import { icons } from '@components/icons/interface';
 
 it('renders button correctly', () => {
@@ -10,6 +18,7 @@ it('renders button correctly', () => {
   expect(element).toBeInTheDocument();
   expect(element).toMatchSnapshot();
 });
+
 it('renders redirect button correctly', () => {
   const { getByRole } = render(<Button.Redirect {...redirectButtonProps} />);
   const element = getByRole('link');
@@ -60,7 +69,7 @@ describe.each([true, false])(
   }
 );
 
-describe.each([...buttonSizes])('Given button size: %s', (size) => {
+describe.each(buttonSizes)('Given button size: %s', (size) => {
   it(`Expect button to have class ${size}`, () => {
     const props = { ...buttonProps, size: size };
     const { getByTestId } = render(<Button {...props} />);
@@ -88,20 +97,54 @@ describe.each(buttonColorSchemes)('Given color scheme %s', (colorScheme) => {
   });
 });
 
-// describe.each([true, false])('Given iconIsLeft boolean', (iconIsLeft) => {
-//   it(`Expect button to ${
-//     iconIsLeft ? 'not' : ''
-//   } contain class: flex-row-reverse`, () => {
-//     const props = { ...buttonProps, iconIsLeft: iconIsLeft };
-//     const { getByTestId } = render(
-//       <Button {...props} iconName="Arrow Right" />
-//     );
-//     const button = getByTestId(buttonProps['data-testid']);
+describe.each(outlineButtonColorSchemes)(
+  'Given color scheme %s',
+  (colorScheme) => {
+    it(`Expect outline button to have class ${colorScheme}`, () => {
+      const props = { ...outlineButtonProps, colorScheme: colorScheme };
+      const { getByTestId } = render(<Button {...props} />);
+      const button = getByTestId(outlineButtonProps['data-testid']);
 
-//     if (iconIsLeft) {
-//       expect(button).toHaveClass('flex-row-reverse');
-//     } else {
-//       expect(button).not.toHaveClass('flex-row-reverse');
-//     }
-//   });
-// });
+      expect(button).toHaveClass(colorScheme);
+    });
+  }
+);
+
+describe.each([true, false])('Given iconIsLeft boolean', (iconIsLeft) => {
+  it(`Expect button to ${
+    iconIsLeft ? 'not' : ''
+  } contain class: flex-row-reverse`, () => {
+    const props = { ...buttonProps, iconIsLeft: iconIsLeft };
+    const { getByTestId } = render(
+      <Button {...props} iconName="Arrow Right" />
+    );
+    const button = getByTestId(buttonProps['data-testid']);
+
+    if (iconIsLeft) {
+      expect(button).toHaveClass('flex-row-reverse');
+    } else {
+      expect(button).not.toHaveClass('flex-row-reverse');
+    }
+  });
+});
+
+describe.each([true, false])(
+  'Given shiftIconOnHover boolean',
+  (shiftIconOnHover) => {
+    it(`Expect button to ${
+      shiftIconOnHover ? 'not' : ''
+    } contain class: shift-icon-on-hover`, () => {
+      const props = { ...buttonProps, shiftIconOnHover: shiftIconOnHover };
+      const { getByTestId } = render(
+        <Button {...props} iconName="Arrow Right" />
+      );
+      const button = getByTestId(buttonProps['data-testid']);
+
+      if (shiftIconOnHover) {
+        expect(button).toHaveClass('shift-icon-on-hover');
+      } else {
+        expect(button).not.toHaveClass('shift-icon-on-hover');
+      }
+    });
+  }
+);
