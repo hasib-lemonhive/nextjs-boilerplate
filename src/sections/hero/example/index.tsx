@@ -1,6 +1,7 @@
-import Link from 'next/link';
 import React from 'react';
 import { IExampleHero } from './interface';
+import Button from '@components/button';
+import { redirectButtonProps } from '@components/button/mock-data';
 
 function ExampleHero({ title, description }: IExampleHero) {
   return (
@@ -22,12 +23,13 @@ function ExampleHero({ title, description }: IExampleHero) {
           </p>
 
           <div className="flex flex-wrap justify-center gap-4 mt-8">
-            <Link
-              className="inline-block px-4 py-2 mt-5 text-sm font-medium text-white transition-colors ease-in-out rounded shadow dark:bg-white dark:text-danger-light dark:active:text-danger bg-primary hover:bg-danger duration-350 focus:outline-none focus:shadow-none sm:w-auto dark:hover:bg-primary dark:hover:text-white"
+            <Button.Redirect
+              {...redirectButtonProps}
+              label={'Server Side Example'}
               href="/server-side"
-            >
-              Server Side Example
-            </Link>
+              isOpenNewTab={false}
+              size="sm"
+            />
           </div>
         </div>
       </div>

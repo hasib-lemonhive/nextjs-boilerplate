@@ -4,9 +4,10 @@ import { client } from 'src/backend/client';
 import { DogsQuery } from 'src/backend/queries/dogs';
 import { ISanityDog } from 'src/backend/types/entities/dog';
 import Card from '@components/cards/card';
-import Link from 'next/link';
 import { generateImageUrlFixedDimensions } from 'src/backend/generate-image';
 import { CardImageDimensions } from '@components/cards/card/interface';
+import Button from '@components/button';
+import { redirectButtonProps } from '@components/button/mock-data';
 
 interface Props {
   dogs: ISanityDog[];
@@ -39,12 +40,15 @@ const Home: NextPage<Props> = ({ dogs }) => {
                 Here are some country cards with puppy images!
               </h2>
 
-              <Link
-                className="inline-block px-4 py-2 mt-5 text-sm font-medium text-white transition-colors ease-in-out rounded shadow dark:bg-white dark:text-danger-light dark:active:text-danger bg-primary hover:bg-danger duration-350 focus:outline-none focus:shadow-none sm:w-auto dark:hover:bg-primary dark:hover:text-white"
-                href="/"
-              >
-                Go Back Home
-              </Link>
+              <div className="mt-10">
+                <Button.Redirect
+                  {...redirectButtonProps}
+                  label={'Go Back Home'}
+                  href="/"
+                  isOpenNewTab={false}
+                  size="sm"
+                />
+              </div>
             </div>
 
             <div className="grid grid-cols-1 gap-5 mt-10 sm:grid-cols-2">
