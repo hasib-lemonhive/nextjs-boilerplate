@@ -2,17 +2,17 @@
 
 exports[`Renders Example Hero correctly 1`] = `
 <section
-  class="dark:bg-slate-800 bg-gray-50"
+  class="dark:bg-black bg-gray section-padding-primary min-h-screen flex items-center"
   role="hero"
 >
   <div
-    class="mx-auto max-w-screen-xl px-4 py-32 lg:flex lg:h-screen lg:items-center"
+    class="container"
   >
     <div
-      class="mx-auto max-w-xl text-center"
+      class="mx-auto max-w-[800px] text-center"
     >
       <h1
-        class="text-3xl font-extrabold sm:text-5xl"
+        class="text-3xl font-extrabold sm:text-5xl dark:text-white"
       >
         Mock Title
         <strong
@@ -22,15 +22,15 @@ exports[`Renders Example Hero correctly 1`] = `
         </strong>
       </h1>
       <p
-        class="mt-4 sm:text-xl sm:leading-relaxed"
+        class="mt-4 sm:text-xl sm:leading-relaxed dark:text-white"
       >
         Mock Description
       </p>
       <div
-        class="mt-8 flex flex-wrap justify-center gap-4"
+        class="flex flex-wrap justify-center gap-4 mt-8"
       >
         <a
-          class="block w-full rounded bg-red-600 px-12 py-3 text-sm font-medium text-white shadow hover:bg-red-700 focus:outline-none focus:ring active:bg-red-500 sm:w-auto"
+          class="inline-block px-4 py-2 mt-5 text-sm font-medium text-white transition-colors ease-in-out rounded shadow dark:bg-white dark:text-danger-light dark:active:text-danger bg-primary hover:bg-danger duration-350 focus:outline-none focus:shadow-none sm:w-auto dark:hover:bg-primary dark:hover:text-white"
           href="/server-side"
         >
           Server Side Example
