@@ -30,10 +30,22 @@ exports[`Renders Example Hero correctly 1`] = `
         class="flex flex-wrap justify-center gap-4 mt-8"
       >
         <a
-          class="inline-block px-4 py-2 mt-5 text-sm font-medium text-white transition-colors ease-in-out rounded shadow dark:bg-white dark:text-danger-light dark:active:text-danger bg-primary hover:bg-danger duration-350 focus:outline-none focus:shadow-none sm:w-auto dark:hover:bg-primary dark:hover:text-white"
+          class="inline-flex focus:outline-none focus-visible:outline-none focus:shadow-none focus-visible:shadow-none"
           href="/server-side"
+          target="_self"
         >
-          Server Side Example
+          <span
+            aria-label="Server Side Example"
+            class="relative z-10 group/button overflow-hidden inline-flex items-center justify-center gap-3 cursor-pointer text-white hover:text-white leading-[1.15] button primary-bg-text-white hover-secondary-bg-text-white sm"
+            data-testid="fill-redirect-button"
+          >
+            <span>
+              Server Side Example
+            </span>
+            <span
+              class="absolute z-[-1] inset-0 invisible opacity-0 group-hover/button:visible group-hover/button:opacity-100 button-bg"
+            />
+          </span>
         </a>
       </div>
     </div>
