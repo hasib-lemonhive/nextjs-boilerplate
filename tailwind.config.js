@@ -163,6 +163,11 @@ module.exports = {
           '0%': { opacity: 0, transform: 'translateX(30px)' },
           '100%': { opacity: 1, transform: 'translateX(0)' },
         },
+        toRightFromLeft: {
+          '49%': { transform: 'translateX(100%)' },
+          '50%': { transform: 'translateX(-100%)', opacity: '0' },
+          '51%': { opacity: '1' },
+        },
       },
       animation: {
         fadeIn: 'fadeIn .4s both',
@@ -170,11 +175,6 @@ module.exports = {
         fadeInDown: 'fadeInDown .4s both',
         fadeInLeft: 'fadeInLeft .4s both',
         fadeInRight: 'fadeInRight .4s both',
-        toRightFromLeft: {
-          '49%': { transform: 'translateX(100%)' },
-          '50%': { transform: 'translateX(-100%)', opacity: '0' },
-          '51%': { opacity: '1' },
-        },
         toRightFromLeft: 'toRightFromLeft 0.5s forwards',
       },
       borderRadius: {
