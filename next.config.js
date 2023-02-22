@@ -3,7 +3,7 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   images: {
-    domains: ['cdn.sanity.io', 'assets.imgix.net'],
+    domains: ['cdn.sanity.io', 'assets.imgix.net', 'res.cloudinary.com'],
   },
 };
 
