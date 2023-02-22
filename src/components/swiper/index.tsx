@@ -3,11 +3,11 @@ import { Swiper } from 'swiper/react';
 import 'swiper/swiper-bundle.min.css';
 export { SwiperSlide as SwiperItem } from 'swiper/react';
 
-import { useIsDomReady } from 'src/hooks/dom-ready';
 import { ISwiperProps } from './interface';
 import { IBreakpoints } from 'src/themes/interface';
 import { ViewportContextValue } from 'src/contexts/viewport';
 import { OffsetContextValue } from 'src/contexts/offset';
+import { DomReadyContextValue } from 'src/contexts/dom-ready';
 
 // Inject Autoplay
 SwiperCore.use([Autoplay]);
@@ -53,7 +53,7 @@ const Carousel = ({
    * Used for - react hydration.
    * https://nextjs.org/docs/messages/react-hydration-error
    */
-  const isDomReady = useIsDomReady();
+  const isDomReady = DomReadyContextValue();
 
   // autoplay
   const autoplaySettings = {
