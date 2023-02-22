@@ -4,11 +4,10 @@ import 'swiper/swiper-bundle.min.css';
 export { SwiperSlide as SwiperItem } from 'swiper/react';
 
 import { useIsDomReady } from 'src/hooks/dom-ready';
-// import { useViewport } from 'src/hooks/viewport';
-import { useOffset } from 'src/hooks/offset';
 import { ISwiperProps } from './interface';
 import { IBreakpoints } from 'src/themes/interface';
 import { ViewportContextValue } from 'src/contexts/viewport';
+import { OffsetContextValue } from 'src/contexts/offset';
 
 // Inject Autoplay
 SwiperCore.use([Autoplay]);
@@ -47,7 +46,7 @@ const Carousel = ({
   showItems = SHOW_ITEMS,
   speed = 800,
 }: ISwiperProps): JSX.Element | null => {
-  const offset = useOffset();
+  const offset = OffsetContextValue();
   const { container } = ViewportContextValue();
 
   /**
