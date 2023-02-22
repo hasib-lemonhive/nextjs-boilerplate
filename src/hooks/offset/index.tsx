@@ -1,7 +1,7 @@
 import { useMemo } from 'react';
-import { useViewport } from '../viewport';
 import { breakpoints } from 'src/themes/breakpoints';
 import { containerDefaultPadding } from 'src/themes/layout';
+import { ViewportContextValue } from 'src/contexts/viewport';
 
 /**
  * This hook is used to calculate the left and right padding of the swiper container,
@@ -13,7 +13,7 @@ import { containerDefaultPadding } from 'src/themes/layout';
  * @returns number | string
  */
 export const useOffset = (): number | string | null => {
-  const { width, container } = useViewport();
+  const { width, container } = ViewportContextValue();
   const containerOffset = useMemo(
     () => (width - breakpoints[container]) / 2,
     [container, width]
