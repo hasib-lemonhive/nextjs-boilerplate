@@ -2,8 +2,8 @@ import { useState, useEffect } from 'react';
 import { breakpoints } from 'src/themes/breakpoints';
 import { getWindow } from 'ssr-window';
 
-// Dimension
-interface Dimension {
+// ILayoutDimension
+export interface ILayoutDimension {
   container: 'sm' | 'md' | 'lg' | 'xl' | '2xl';
   width: number;
   height: number;
@@ -20,7 +20,7 @@ const getContainer = (width: number): 'sm' | 'md' | 'lg' | 'xl' | '2xl' => {
 };
 
 // getWindowDimensions
-const getWindowDimensions = (): Omit<Dimension, 'container'> => {
+const getWindowDimensions = (): Omit<ILayoutDimension, 'container'> => {
   const { innerWidth: width, innerHeight: height } = getWindow();
   return { width, height };
 };
@@ -36,7 +36,7 @@ const getWindowDimensions = (): Omit<Dimension, 'container'> => {
  * @returns {object} container, width, height
  */
 
-export const useViewport = (): Dimension => {
+export const useViewport = (): ILayoutDimension => {
   const { width, height } = getWindowDimensions();
   const [container, setContainer] = useState(getContainer(width));
   const [windowDimensions, setWindowDimensions] = useState({ width, height });
