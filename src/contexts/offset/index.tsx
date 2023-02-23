@@ -1,15 +1,12 @@
 import { createContext, useContext } from 'react';
-import { useOffset } from 'src/hooks/offset';
+import { OffsetType, useOffset } from 'src/hooks/offset';
+import { IProviderProps } from '../common/interface';
 
-const defaultOffsetValue: number | string | null = 0;
-// TODO: Need udpate type with useOffset hooks sync
-const OffsetContext = createContext<number | string | null>(defaultOffsetValue);
+const defaultOffsetValue: OffsetType = 0;
 
-interface IOffsetProvider {
-  children: React.ReactNode;
-}
+const OffsetContext = createContext<OffsetType>(defaultOffsetValue);
 
-export default function OffsetProvider({ children }: IOffsetProvider) {
+export default function OffsetProvider({ children }: IProviderProps) {
   const offset = useOffset();
   return (
     <OffsetContext.Provider value={offset}>{children}</OffsetContext.Provider>

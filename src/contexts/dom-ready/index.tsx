@@ -1,21 +1,17 @@
 import { createContext, useContext } from 'react';
 import { useIsDomReady } from 'src/hooks/dom-ready';
+import { IProviderProps } from '../common/interface';
 
 const contextDefaultValue: boolean = false;
 
 const DomReadyContext = createContext<Boolean>(contextDefaultValue);
 
-interface IOffsetProvider {
-  children: React.ReactNode;
-}
-export default function DomReadyProvider({ children }: IOffsetProvider) {
+export default function DomReadyProvider({ children }: IProviderProps) {
   const isDomReady = useIsDomReady();
   return (
-    <>
-      <DomReadyContext.Provider value={isDomReady}>
-        {children}
-      </DomReadyContext.Provider>
-    </>
+    <DomReadyContext.Provider value={isDomReady}>
+      {children}
+    </DomReadyContext.Provider>
   );
 }
 

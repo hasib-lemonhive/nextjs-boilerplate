@@ -1,5 +1,6 @@
 import React, { createContext, useContext } from 'react';
 import { ILayoutDimension, useViewport } from 'src/hooks/viewport';
+import { IProviderProps } from '../common/interface';
 
 const contextDefaultValues: ILayoutDimension = {
   container: '2xl',
@@ -7,14 +8,9 @@ const contextDefaultValues: ILayoutDimension = {
   height: 0,
 };
 
-export const ViewportContext =
-  createContext<ILayoutDimension>(contextDefaultValues);
+const ViewportContext = createContext<ILayoutDimension>(contextDefaultValues);
 
-interface IViewportProvider {
-  children: React.ReactNode;
-}
-
-export default function ViewportProvider({ children }: IViewportProvider) {
+export default function ViewportProvider({ children }: IProviderProps) {
   const { container, width, height } = useViewport();
   return (
     <ViewportContext.Provider
