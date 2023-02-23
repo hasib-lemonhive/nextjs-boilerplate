@@ -6,6 +6,7 @@ import ViewportProvider from 'src/contexts/viewport';
 import OffsetProvider from 'src/contexts/offset';
 import DomReadyProvider from 'src/contexts/dom-ready';
 
+// TODO: Need check all context api implementation
 function MyApp({ Component, pageProps }: AppProps) {
   /* Add fonts variables to all pages */
   return (
