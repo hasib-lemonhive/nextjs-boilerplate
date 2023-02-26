@@ -1,0 +1,30 @@
+{
+  "name": "NextJs Template",
+  "dockerComposeFile": "./docker-compose.dev.yml",
+  "workspaceFolder": "/workspace",
+  "service": "frontend",
+  "overrideCommand": true,
+  "postStartCommand": "npm run prepare && chmod +x .husky/*",
+  "shutdownAction": "stopCompose",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "steoates.autoimport",
+        "michelemelluso.code-beautifier",
+        "mikestead.dotenv",
+        "dbaeumer.vscode-eslint",
+        "mhutchie.git-graph",
+        "ms-vscode.vscode-typescript-next",
+        "Orta.vscode-jest",
+        "ms-vsliveshare.vsliveshare",
+        "ms-vsliveshare.vsliveshare-pack",
+        "PKief.material-icon-theme",
+        "bradlc.vscode-tailwindcss",
+        "redhat.vscode-yaml",
+        "esbenp.prettier-vscode",
+        "yzhang.markdown-all-in-one",
+        "rvest.vs-code-prettier-eslint"
+      ]
+    }
+  }
+}

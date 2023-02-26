@@ -1,0 +1,10 @@
+# Declare services.
+services:
+  frontend:
+    build:
+      dockerfile: Dockerfile.dev
+      context: .
+    restart: on-failure:10
+    volumes:
+      - ./:/workspace
+      - /workspace/node_modules
