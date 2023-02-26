@@ -23,11 +23,6 @@ const meta: Meta<typeof Component> = {
       control: 'radio',
       options: [...buttonSizes],
     },
-    'data-testid': {
-      table: {
-        disable: true,
-      },
-    },
     iconName: {
       control: 'select',
       options: [undefined, 'Arrow Right', 'Arrow Left'],

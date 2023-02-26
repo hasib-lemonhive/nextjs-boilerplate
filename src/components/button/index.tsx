@@ -29,7 +29,6 @@ const BaseButton = ({
   iconName,
   iconIsLeft,
   shiftIconOnHover,
-  'data-testid': dataTestId,
   isDisabled,
   variant,
 }: IBaseButton) => {
@@ -56,7 +55,7 @@ const BaseButton = ({
   );
 
   return (
-    <span className={btnClasses} data-testid={dataTestId} aria-label={label}>
+    <span className={btnClasses} aria-label={label}>
       <span>{label}</span>
       {iconName !== undefined && (
         <span className={Styles['button-icon']}>

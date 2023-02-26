@@ -31,8 +31,8 @@ describe('Given a mock function is passed to button', () => {
     const mockFunction = jest.fn();
 
     const props = { ...buttonProps, clickHandler: mockFunction };
-    const { getByTestId } = render(<Button {...props} />);
-    const button = getByTestId(buttonProps['data-testid']);
+    const { getByRole } = render(<Button {...props} />);
+    const button = getByRole('button');
     fireEvent.click(button);
     expect(mockFunction).toHaveBeenCalled();
   });
@@ -49,21 +49,15 @@ describe.each([true, false])(
         href: 'https://www.google.com/',
         isOpenNewTab: isOpenNewTab,
       };
-      const { getByTestId } = render(<Button.Redirect {...props} />);
-      const button = getByTestId(buttonProps['data-testid']);
+      const { getByRole } = render(<Button.Redirect {...props} />);
+      const link = getByRole('link');
 
-      expect((button.parentElement as HTMLAnchorElement).href).toEqual(
-        'https://www.google.com/'
-      );
+      expect(link).toHaveAttribute('href', 'https://www.google.com/');
 
       if (isOpenNewTab) {
-        expect((button.parentElement as HTMLAnchorElement).target).toEqual(
-          '_blank'
-        );
+        expect(link).toHaveAttribute('target', '_blank');
       } else {
-        expect((button.parentElement as HTMLAnchorElement).target).toEqual(
-          '_self'
-        );
+        expect(link).toHaveAttribute('target', '_self');
       }
     });
   }
@@ -72,17 +66,17 @@ describe.each([true, false])(
 describe.each(buttonSizes)('Given button size: %s', (size) => {
   it(`Expect button to have class ${size}`, () => {
     const props = { ...buttonProps, size: size };
-    const { getByTestId } = render(<Button {...props} />);
-    const button = getByTestId(buttonProps['data-testid']);
-    expect(button).toHaveClass(size);
+    const { getByRole } = render(<Button {...props} />);
+    const button = getByRole('button');
+    expect(button.children[0]).toHaveClass(size);
   });
 });
 
 describe.each(icons)('Given icon option: %s', (iconName) => {
   it(`Expect button to have ${iconName}`, () => {
     const props = { ...buttonProps, iconName: iconName };
-    const { getByTestId } = render(<Button {...props} />);
-    const button = getByTestId(buttonProps['data-testid']);
+    const { getByRole } = render(<Button {...props} />);
+    const button = getByRole('button');
     expect(button).toMatchSnapshot();
   });
 });
@@ -90,10 +84,10 @@ describe.each(icons)('Given icon option: %s', (iconName) => {
 describe.each(buttonColorSchemes)('Given color scheme %s', (colorScheme) => {
   it(`Expect button to have class ${colorScheme}`, () => {
     const props = { ...buttonProps, colorScheme: colorScheme };
-    const { getByTestId } = render(<Button {...props} />);
-    const button = getByTestId(buttonProps['data-testid']);
+    const { getByRole } = render(<Button {...props} />);
+    const button = getByRole('button');
 
-    expect(button).toHaveClass(colorScheme);
+    expect(button.children[0]).toHaveClass(colorScheme);
   });
 });
 
@@ -102,10 +96,10 @@ describe.each(outlineButtonColorSchemes)(
   (colorScheme) => {
     it(`Expect outline button to have class ${colorScheme}`, () => {
       const props = { ...outlineButtonProps, colorScheme: colorScheme };
-      const { getByTestId } = render(<Button {...props} />);
-      const button = getByTestId(outlineButtonProps['data-testid']);
+      const { getByRole } = render(<Button {...props} />);
+      const button = getByRole('button');
 
-      expect(button).toHaveClass(colorScheme);
+      expect(button.children[0]).toHaveClass(colorScheme);
     });
   }
 );
@@ -115,15 +109,13 @@ describe.each([true, false])('Given iconIsLeft boolean', (iconIsLeft) => {
     iconIsLeft ? 'not' : ''
   } contain class: flex-row-reverse`, () => {
     const props = { ...buttonProps, iconIsLeft: iconIsLeft };
-    const { getByTestId } = render(
-      <Button {...props} iconName="Arrow Right" />
-    );
-    const button = getByTestId(buttonProps['data-testid']);
+    const { getByRole } = render(<Button {...props} iconName="Arrow Right" />);
+    const button = getByRole('button');
 
     if (iconIsLeft) {
-      expect(button).toHaveClass('flex-row-reverse');
+      expect(button.children[0]).toHaveClass('flex-row-reverse');
     } else {
-      expect(button).not.toHaveClass('flex-row-reverse');
+      expect(button.children[0]).not.toHaveClass('flex-row-reverse');
     }
   });
 });
@@ -135,15 +127,15 @@ describe.each([true, false])(
       shiftIconOnHover ? 'not' : ''
     } contain class: shift-icon-on-hover`, () => {
       const props = { ...buttonProps, shiftIconOnHover: shiftIconOnHover };
-      const { getByTestId } = render(
+      const { getByRole } = render(
         <Button {...props} iconName="Arrow Right" />
       );
-      const button = getByTestId(buttonProps['data-testid']);
+      const button = getByRole('button');
 
       if (shiftIconOnHover) {
-        expect(button).toHaveClass('shift-icon-on-hover');
+        expect(button.children[0]).toHaveClass('shift-icon-on-hover');
       } else {
-        expect(button).not.toHaveClass('shift-icon-on-hover');
+        expect(button.children[0]).not.toHaveClass('shift-icon-on-hover');
       }
     });
   }

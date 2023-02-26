@@ -27,7 +27,6 @@ export interface IFillButton {
   clickHandler: (
     e: React.MouseEvent<HTMLElement> | React.FormEvent<HTMLFormElement>
   ) => void;
-  'data-testid': string;
   hoverColorScheme?: ColorScheme;
   iconName?: IconNames;
   iconIsLeft?: boolean;

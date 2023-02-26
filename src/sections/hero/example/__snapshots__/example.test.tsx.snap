@@ -37,7 +37,6 @@ exports[`Renders Example Hero correctly 1`] = `
           <span
             aria-label="Server Side Example"
             class="relative z-10 group/button overflow-hidden inline-flex items-center justify-center gap-3 cursor-pointer text-white hover:text-white leading-[1.15] button primary-bg-text-white hover-secondary-bg-text-white sm"
-            data-testid="fill-redirect-button"
           >
             <span>
               Server Side Example
