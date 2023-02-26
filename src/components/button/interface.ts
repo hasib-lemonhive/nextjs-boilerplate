@@ -1,22 +1,6 @@
 import React from 'react';
 import { IconNames } from './../icons/interface';
 
-export const buttonColorSchemes = [
-  'primary-bg-text-white',
-  'secondary-bg-text-white',
-  'black-bg-text-white',
-  'white-bg-text-black',
-] as const;
-type ColorScheme = (typeof buttonColorSchemes)[number];
-
-export const outlineButtonColorSchemes = [
-  'transparent-bg-text-primary',
-  'transparent-bg-text-secondary',
-  'transparent-bg-text-white',
-  'transparent-bg-text-black',
-] as const;
-type OutlineColorScheme = (typeof outlineButtonColorSchemes)[number];
-
 export const buttonSizes = ['lg', 'md', 'sm', 'xs'] as const;
 type Size = (typeof buttonSizes)[number];
 
@@ -57,3 +41,19 @@ export interface IOutlineRedirectButton
 export type IBaseButton =
   | Omit<IOutlineButton, 'clickHandler'>
   | Omit<IFillButton, 'clickHandler'>;
+
+export const buttonColorSchemes = [
+  'primary-bg-text-white',
+  'secondary-bg-text-white',
+  'black-bg-text-white',
+  'white-bg-text-black',
+] as const;
+type ColorScheme = (typeof buttonColorSchemes)[number];
+
+export const outlineButtonColorSchemes = [
+  'transparent-bg-text-primary',
+  'transparent-bg-text-secondary',
+  'transparent-bg-text-white',
+  'transparent-bg-text-black',
+] as const;
+type OutlineColorScheme = (typeof outlineButtonColorSchemes)[number];
