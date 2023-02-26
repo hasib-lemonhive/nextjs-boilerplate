@@ -13,7 +13,6 @@ interface Props extends ICardWrapper {
  */
 const CardWrapper = ({
   children,
-  dataTestId,
   cardBorderRadius,
   cardShadow,
   hoverCardShadow,
@@ -28,7 +27,7 @@ const CardWrapper = ({
     { [Styles[cardBorderRadius]]: true }
   );
   return (
-    <div className={cardClasses} data-testid={dataTestId}>
+    <div className={cardClasses} role="presentation">
       {children}
     </div>
   );

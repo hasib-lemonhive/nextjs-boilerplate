@@ -3,7 +3,7 @@
 exports[`renders card correctly 1`] = `
 <div
   class="relative overflow-hidden h-auto card shadow-one radius-one"
-  data-testid="card"
+  role="presentation"
 >
   <div
     class="card h-full"
@@ -68,7 +68,7 @@ exports[`renders card correctly 1`] = `
 exports[`renders card correctly with link 1`] = `
 <div
   class="relative overflow-hidden h-auto card shadow-one radius-one"
-  data-testid="card"
+  role="presentation"
 >
   <div
     class="card h-full"

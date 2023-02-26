@@ -10,7 +10,6 @@ import { CardBorderRadiusEnum, CardShadowEnum } from '../wrapper/interface';
 function BaseCard({ dog }: Omit<ICard, 'link'>) {
   return (
     <CardWrapper
-      dataTestId="card"
       cardBorderRadius={CardBorderRadiusEnum.RadiusOne}
       cardShadow={CardShadowEnum.ShadowOne}
     >
