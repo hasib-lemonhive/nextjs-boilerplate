@@ -8,11 +8,11 @@ import DomReadyProvider from 'src/contexts/dom-ready';
 
 // TODO: Need check all context api implementation
 function MyApp({ Component, pageProps }: AppProps) {
-  /* Add fonts variables to all pages */
   return (
     <DomReadyProvider>
       <ViewportProvider>
         <OffsetProvider>
+          {/* Make font variables avaiable to all pages. */}
           <div
             className={`${primary.variable} ${secondary.variable} app-wrapper`}
           >
