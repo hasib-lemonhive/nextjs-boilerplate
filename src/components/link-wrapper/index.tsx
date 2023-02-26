@@ -20,8 +20,7 @@ export function LinkWrapper({
   children,
   isStyled = true,
 }: ILinkWrapper) {
-  const styled = isStyled !== undefined && isStyled;
-  const linkClasses = clsx({ [Styles['link']]: styled });
+  const linkClasses = clsx({ [Styles['link']]: isStyled });
   return (
     <Link
       className={linkClasses}
@@ -29,7 +28,7 @@ export function LinkWrapper({
       target={isOpenNewTab ? '_blank' : '_self'}
       rel={href.startsWith('/') ? 'noreferrer noopener' : undefined}
     >
-      {styled ? <span>{children}</span> : <>{children}</>}
+      {isStyled ? <span>{children}</span> : <>{children}</>}
     </Link>
   );
 }
