@@ -1,7 +1,9 @@
-export interface IBreakpoints {
-  sm: number;
-  md: number;
-  lg: number;
-  xl: number;
-  '2xl': number;
-}
+import { breakpoints } from '@root/tailwind.breakpoints';
+
+const keys = Object.keys(breakpoints);
+
+export type Breakpoints = (typeof keys)[number];
+
+export type IBreakpoints = {
+  [key: Breakpoints]: number;
+};

@@ -1,4 +1,5 @@
 const { fontFamily } = require('tailwindcss/defaultTheme');
+const { breakpoints } = require('./tailwind.breakpoints');
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -9,13 +10,7 @@ module.exports = {
     container: false,
   },
   theme: {
-    screens: {
-      sm: '640px',
-      md: '768px',
-      lg: '1024px',
-      xl: '1280px',
-      '2xl': '1400px',
-    },
+    screens: breakpoints,
     fontFamily: {
       primary: ['var(--font-primary)', ...fontFamily.sans],
       secondary: ['var(--font-secondary)', ...fontFamily.sans],

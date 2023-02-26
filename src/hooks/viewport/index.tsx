@@ -1,21 +1,22 @@
 import { useState, useEffect } from 'react';
-import { breakpoints } from 'src/themes/breakpoints';
+import { breakpoints } from '@root/tailwind.breakpoints';
 import { getWindow } from 'ssr-window';
+import { Breakpoints } from '@root/src/themes/interface';
 
 // ILayoutDimension
 export interface ILayoutDimension {
-  container: 'sm' | 'md' | 'lg' | 'xl' | '2xl';
+  container: Breakpoints;
   width: number;
   height: number;
 }
 
 // getContainer
-const getContainer = (width: number): 'sm' | 'md' | 'lg' | 'xl' | '2xl' => {
-  if (width >= breakpoints['2xl']) return '2xl';
-  if (width >= breakpoints.xl) return 'xl';
-  if (width >= breakpoints.lg) return 'lg';
-  if (width >= breakpoints.md) return 'md';
-  if (width >= breakpoints.sm) return 'sm';
+const getContainer = (width: number): Breakpoints => {
+  if (width >= Number(breakpoints['2xl'])) return '2xl';
+  if (width >= Number(breakpoints.xl)) return 'xl';
+  if (width >= Number(breakpoints.lg)) return 'lg';
+  if (width >= Number(breakpoints.md)) return 'md';
+  if (width >= Number(breakpoints.sm)) return 'sm';
   return 'sm';
 };
 
