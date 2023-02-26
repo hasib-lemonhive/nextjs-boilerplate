@@ -21,10 +21,10 @@ export function LinkWrapper({
   isStyled = true,
 }: ILinkWrapper) {
   const styled = isStyled !== undefined && isStyled;
-  const btnClasses = clsx({ [Styles['link']]: styled });
+  const linkClasses = clsx({ [Styles['link']]: styled });
   return (
     <Link
-      className={btnClasses}
+      className={linkClasses}
       href={href}
       target={isOpenNewTab ? '_blank' : '_self'}
       rel={href.startsWith('/') ? 'noreferrer noopener' : undefined}
