@@ -7,7 +7,7 @@ import { CustomImage } from '@components/custom-image';
 import CardWrapper from '../wrapper';
 import { CardBorderRadiusEnum, CardShadowEnum } from '../wrapper/interface';
 
-function BaseCard({ dog }: Omit<ICard, 'link'>) {
+function BaseCard({ item }: Omit<ICard, 'link'>) {
   return (
     <CardWrapper
       cardBorderRadius={CardBorderRadiusEnum.RadiusOne}
@@ -15,16 +15,16 @@ function BaseCard({ dog }: Omit<ICard, 'link'>) {
     >
       <div className={Styles.card + ' ' + 'h-full'}>
         <CustomImage
-          alt={dog.image.alt}
+          alt={item.image.alt}
           height={CardImageDimensions.height}
           width={CardImageDimensions.width}
-          src={dog.image.src}
-          lqip={dog.image.lqip}
+          src={item.image.src}
+          lqip={item.image.lqip}
         />
         <div className="px-6 py-4">
-          <h3 className="mb-2 text-xl font-bold">{dog.name}</h3>
+          <h3 className="mb-2 text-xl font-bold">{item.name}</h3>
           <div className="space-y-2 text-base line-clamp-3">
-            <PortableText value={dog.description} />
+            <PortableText value={item.description} />
           </div>
         </div>
         <div className="px-6 pt-4 pb-2">
@@ -43,15 +43,15 @@ function BaseCard({ dog }: Omit<ICard, 'link'>) {
   );
 }
 
-function Card({ link, dog }: ICard) {
+function Card({ link, item }: ICard) {
   if (link !== undefined) {
     return (
       <Link href={link} className="inline-block">
-        <BaseCard dog={dog} />
+        <BaseCard item={item} />
       </Link>
     );
   } else {
-    return <BaseCard dog={dog} />;
+    return <BaseCard item={item} />;
   }
 }
 

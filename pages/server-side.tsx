@@ -62,8 +62,7 @@ const Home: NextPage<Props> = ({ dogs }) => {
                 return (
                   <Card
                     key={index}
-                    dog={{
-                      breed: dog.breed,
+                    item={{
                       description: dog.description,
                       name: dog.name,
                       image: {

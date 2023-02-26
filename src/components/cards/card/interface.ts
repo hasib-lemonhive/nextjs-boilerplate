@@ -1,15 +1,4 @@
-import { ISanityCustomPortableText } from '../../../backend/types/general/portable-text';
-
-export interface IDog {
-  name: string;
-  breed: string;
-  description: ISanityCustomPortableText;
-  image: {
-    src: string;
-    alt: string;
-    lqip: string;
-  };
-}
+import { ISanityCustomPortableText } from 'src/backend/types/general/portable-text';
 
 export const CardImageDimensions = {
   height: 400,
@@ -17,6 +6,14 @@ export const CardImageDimensions = {
 };
 
 export interface ICard {
-  dog: IDog;
+  item: {
+    name: string;
+    description: ISanityCustomPortableText;
+    image: {
+      src: string;
+      alt: string;
+      lqip: string;
+    };
+  };
   link?: string;
 }

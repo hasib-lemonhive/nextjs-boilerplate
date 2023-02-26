@@ -1,5 +1,3 @@
-import { IDog } from './interface';
-
 export const customPortableTextRaw = [
   {
     _key: '99b334a94800',
@@ -63,7 +61,6 @@ export const customPortableTextRaw = [
  * You should only use type assertion (as) in mock data.
  */
 export const mockDog = {
-  breed: 'Test Breed',
   name: 'Test Name',
   description: customPortableTextRaw,
   image: {
@@ -71,4 +68,4 @@ export const mockDog = {
     alt: 'Test Alt',
     lqip: 'https://assets.imgix.net/unsplash/jellyfish.jpg?w=800&h=400&fit=crop&crop=entropy&px=16&blur=200&fm=webp',
   },
-} as IDog;
+};
