@@ -8,6 +8,12 @@ import { generateImageUrlFixedDimensions } from 'src/backend/generate-image';
 import { CardImageDimensions } from '@components/cards/card/interface';
 import Button from '@components/button';
 import { redirectButtonProps } from '@components/button/mock-data';
+import Carousel, { CarouselItem } from '@components/swiper';
+import {
+  swiperCommonOptions,
+  swiperPreviewimages,
+} from '@components/swiper/mock-data';
+import Image from 'next/image';
 
 interface Props {
   dogs: ISanityDog[];
@@ -78,6 +84,18 @@ const Home: NextPage<Props> = ({ dogs }) => {
           </div>
         </div>
       </main>
+      <Carousel {...swiperCommonOptions} haveOffset>
+        {swiperPreviewimages.map((swiperPreviewimage, index) => (
+          <CarouselItem key={index}>
+            <Image
+              src={`${swiperPreviewimage}`}
+              alt={`image-${index}`}
+              width={960}
+              height={720}
+            />
+          </CarouselItem>
+        ))}
+      </Carousel>
     </>
   );
 };
