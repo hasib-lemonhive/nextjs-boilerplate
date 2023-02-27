@@ -1,7 +1,7 @@
 import SwiperCore, { Autoplay } from 'swiper';
 import { Swiper } from 'swiper/react';
 import 'swiper/swiper-bundle.min.css';
-export { SwiperSlide as SwiperItem } from 'swiper/react';
+export { SwiperSlide as CarouselItem } from 'swiper/react';
 
 import { ISwiperProps } from './interface';
 import { IBreakpoints } from 'src/themes/interface';

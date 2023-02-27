@@ -1,7 +1,6 @@
-import Component from '.';
+import Component, { CarouselItem } from '.';
 import { Meta, StoryObj } from '@storybook/react';
 import { swiperPreviewimages, swiperCommonOptions } from './mock-data';
-import { SwiperSlide } from 'swiper/react';
 import Image from 'next/image';
 
 const meta: Meta<typeof Component> = {
@@ -24,14 +23,14 @@ export const Primary: StoryObj<typeof Component> = {
   render: () => (
     <Component {...swiperCommonOptions} haveOffset>
       {swiperPreviewimages.map((swiperPreviewimage, index) => (
-        <SwiperSlide key={index}>
+        <CarouselItem key={index}>
           <Image
             src={`${swiperPreviewimage}`}
             alt={`image-${index}`}
             width={960}
             height={720}
           />
-        </SwiperSlide>
+        </CarouselItem>
       ))}
     </Component>
   ),
