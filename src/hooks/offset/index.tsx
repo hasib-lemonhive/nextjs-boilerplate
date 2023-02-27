@@ -1,8 +1,7 @@
 import { useMemo } from 'react';
-import { breakpoints } from '/workspace/tailwind.breakpoints';
+import { breakpoints } from '@root/tailwind.breakpoints';
 import { containerDefaultPadding } from 'src/themes/layout';
 import { ViewportContextValue } from 'src/contexts/viewport';
-
 export type OffsetType = number | string | null;
 
 /**
