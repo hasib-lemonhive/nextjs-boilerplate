@@ -10,8 +10,8 @@ module.exports = {
   },
   theme: {
     /**
-     * WARNING: If you make changes to the breakpoints then please,
-     * please update the interface file in 'src/themes/interface'.
+     * WARNING: If you make changes to the breakpoints then,
+     * please update the keys array/BREAKPOINTS object in 'src/themes/interface'.
      */
     screens: {
       sm: '640px',
