@@ -1,5 +1,5 @@
 import { useMemo } from 'react';
-import { breakpoints } from '@root/tailwind.breakpoints';
+import { BREAKPOINTS } from 'src/themes/interface';
 import { containerDefaultPadding } from 'src/themes/layout';
 import { ViewportContextValue } from 'src/contexts/viewport';
 export type OffsetType = number | string | null;
@@ -16,7 +16,7 @@ export type OffsetType = number | string | null;
 export const useOffset = (): OffsetType => {
   const { width, container } = ViewportContextValue();
   const containerOffset = useMemo(
-    () => (width - Number(breakpoints[container])) / 2,
+    () => (width - BREAKPOINTS[container]) / 2,
     [container, width]
   );
   const offset: number | string =
