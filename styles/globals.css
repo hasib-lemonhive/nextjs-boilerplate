@@ -42,9 +42,12 @@
 */
 .container {
   /* local variable  */
-  --padding-left: 16px;
-  --padding-right: 16px;
+  --spacing-x: 16px;
+  --padding-left: var(--spacing-x);
+  --padding-right: var(--spacing-x);
   --padding: calc(var(--padding-left) + var(--padding-right));
+
+  --container-2xl: 1320px;
 
   @apply w-full mx-auto;
   padding-left: var(--padding-left);
@@ -71,7 +74,7 @@
 
 @screen 2xl {
   .container {
-    max-width: calc(theme(screens[2xl]) + var(--padding));
+    max-width: calc(var(--container-2xl) + var(--padding));
   }
 }
 
