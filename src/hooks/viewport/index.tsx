@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { breakpoints } from '@root/tailwind.breakpoints';
+import { BREAKPOINTS } from 'src/themes/interface';
 import { getWindow } from 'ssr-window';
 import { Breakpoint } from '@root/src/themes/interface';
 
@@ -12,11 +12,11 @@ export interface ILayoutDimension {
 
 // getContainer
 const getContainer = (width: number): Breakpoint => {
-  if (width >= parseInt(breakpoints['2xl'])) return '2xl';
-  if (width >= parseInt(breakpoints.xl)) return 'xl';
-  if (width >= parseInt(breakpoints.lg)) return 'lg';
-  if (width >= parseInt(breakpoints.md)) return 'md';
-  if (width >= parseInt(breakpoints.sm)) return 'sm';
+  if (width >= BREAKPOINTS['2xl']) return '2xl';
+  if (width >= BREAKPOINTS.xl) return 'xl';
+  if (width >= BREAKPOINTS.lg) return 'lg';
+  if (width >= BREAKPOINTS.md) return 'md';
+  if (width >= BREAKPOINTS.sm) return 'sm';
   return 'sm';
 };
 
