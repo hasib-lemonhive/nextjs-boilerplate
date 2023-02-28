@@ -23,7 +23,7 @@ export const BREAKPOINTS: IBreakpoints = {
 };
 
 /**
- * Warning: Please check your custom container specific max-width value.
+ * Warning: Please check your Container component.
  */
 const TOTAL_PADDING = CONTAINER_DEFAULT_PADDING * 2;
 export const CONTAINERS: IBreakpoints = {
