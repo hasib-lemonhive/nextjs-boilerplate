@@ -20,7 +20,8 @@
     @apply scroll-smooth scroll-p-[6rem] lg:scroll-p-[9rem];
   }
 
-  .app-wrapper,
+  /* Warning: '.storybook-wrapper' use for storybook */
+  .storybook-wrapper,
   body,
   p {
     @apply text-base text-black font-primary dark:text-white;

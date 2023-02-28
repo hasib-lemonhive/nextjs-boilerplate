@@ -42,7 +42,9 @@ const withThemeProvider = (Story, context) => {
   }, [theme]);
 
   return (
-    <div className={`${primary.variable} ${secondary.variable} app-wrapper`}>
+    <div
+      className={`${primary.variable} ${secondary.variable} storybook-wrapper`}
+    >
       <Story />
     </div>
   );

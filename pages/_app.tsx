@@ -11,9 +11,7 @@ function MyApp({ Component, pageProps }: AppProps) {
     <IsDomReadyProvider>
       <ViewportProvider>
         {/* Make font variables avaiable to all pages. */}
-        <div
-          className={`${primary.variable} ${secondary.variable} app-wrapper`}
-        >
+        <div className={`${primary.variable} ${secondary.variable}`}>
           <ExampleNavbar />
           <Component {...pageProps} />
         </div>
