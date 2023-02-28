@@ -1,1 +1,1 @@
-export const containerDefaultPadding: number = 1;
+export const CONTAINER_DEFAULT_PADDING: number = 16;

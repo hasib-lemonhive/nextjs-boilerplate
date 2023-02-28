@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
-import { BREAKPOINTS } from 'src/themes/interface';
-import { containerDefaultPadding } from 'src/themes/layout';
+import { CONTAINERS } from 'src/themes/interface';
+import { CONTAINER_DEFAULT_PADDING } from 'src/themes/layout';
 import { ViewportContextValue } from 'src/contexts/viewport';
 export type OffsetType = number | string | null;
 
@@ -16,12 +16,12 @@ export type OffsetType = number | string | null;
 export const useOffset = (): OffsetType => {
   const { width, container } = ViewportContextValue();
   const containerOffset = useMemo(
-    () => (width - BREAKPOINTS[container]) / 2,
+    () => (width - CONTAINERS[container]) / 2,
     [container, width]
   );
   const offset: number | string =
     containerOffset > 0
-      ? containerOffset + (containerDefaultPadding / 2) * 16
-      : `${containerDefaultPadding}rem`;
+      ? containerOffset + CONTAINER_DEFAULT_PADDING
+      : `${CONTAINER_DEFAULT_PADDING}px`;
   return offset;
 };
