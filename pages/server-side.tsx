@@ -57,46 +57,48 @@ const Home: NextPage<Props> = ({ dogs }) => {
                 />
               </div>
             </div>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mt-10">
+            {dogs.map((dog: ISanityDog, index: number) => {
+              const image = generateImageUrlFixedDimensions(
+                dog.image.imageFile,
+                CardImageDimensions.width,
+                CardImageDimensions.height
+              );
 
-            <div className="grid grid-cols-1 gap-5 mt-10 sm:grid-cols-2">
-              {dogs.map((dog: ISanityDog, index: number) => {
-                const image = generateImageUrlFixedDimensions(
-                  dog.image.imageFile,
-                  CardImageDimensions.width,
-                  CardImageDimensions.height
-                );
-
-                return (
-                  <Card
-                    key={index}
-                    item={{
-                      description: dog.description,
-                      name: dog.name,
-                      image: {
-                        src: image.src,
-                        alt: dog.image.altDescription,
-                        lqip: image.lqip,
-                      },
-                    }}
-                  />
-                );
-              })}
-            </div>
+              return (
+                <Card
+                  key={index}
+                  description={
+                    'Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, cumque adipisci quis itaque ratione ipsa autem quibusdam numquam quo eaque reprehenderit at quae! Saepe ipsum sint odit maxime quis aliquam, sit quibusdam, officiis commodi, veniam nobis temporibus distinctio iure amet!'
+                  }
+                  name={dog.name}
+                  image={{
+                    src: image.src,
+                    alt: dog.image.altDescription,
+                    lqip: image.lqip,
+                  }}
+                  tags={['Tag-1', 'Tag-2', 'Tag-3']}
+                />
+              );
+            })}
           </div>
         </Container>
       </main>
-      <Carousel {...swiperCommonOptions} haveOffset>
-        {swiperPreviewimages.map((swiperPreviewimage, index) => (
-          <CarouselItem key={index}>
-            <Image
-              src={`${swiperPreviewimage}`}
-              alt={`image-${index}`}
-              width={960}
-              height={720}
-            />
-          </CarouselItem>
-        ))}
-      </Carousel>
+      <div className="section-padding-primary">
+        <Carousel {...swiperCommonOptions} haveOffset>
+          {swiperPreviewimages.map((swiperPreviewimage, index) => (
+            <CarouselItem key={index}>
+              <Image
+                src={`${swiperPreviewimage}`}
+                alt={`image-${index}`}
+                width={960}
+                height={720}
+              />
+            </CarouselItem>
+          ))}
+        </Carousel>
+      </div>
     </>
   );
 };

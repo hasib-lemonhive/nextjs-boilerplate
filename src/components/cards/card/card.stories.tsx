@@ -24,5 +24,5 @@ const meta: Meta<typeof Component> = {
 export default meta;
 
 export const Primary: StoryObj<typeof Component> = {
-  args: { item: mockDog },
+  args: { ...mockDog },
 };

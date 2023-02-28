@@ -1,3 +1,5 @@
+import { ICard } from './interface';
+
 export const customPortableTextRaw = [
   {
     _key: '99b334a94800',
@@ -60,12 +62,14 @@ export const customPortableTextRaw = [
 /**
  * You should only use type assertion (as) in mock data.
  */
-export const mockDog = {
+export const mockDog: Omit<ICard, 'link'> = {
   name: 'Test Name',
-  description: customPortableTextRaw,
+  description:
+    'Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, cumque adipisci quis itaque ratione ipsa autem quibusdam numquam quo eaque reprehenderit at quae! Saepe ipsum sint odit maxime quis aliquam, sit quibusdam, officiis commodi, veniam nobis temporibus distinctio iure amet!',
   image: {
     src: 'https://assets.imgix.net/unsplash/jellyfish.jpg?w=800&h=400&fit=crop&crop=entropy',
     alt: 'Test Alt',
     lqip: 'https://assets.imgix.net/unsplash/jellyfish.jpg?w=800&h=400&fit=crop&crop=entropy&px=16&blur=200&fm=webp',
   },
+  tags: ['Tag-1', 'Tag-2', 'Tag-3'],
 };
