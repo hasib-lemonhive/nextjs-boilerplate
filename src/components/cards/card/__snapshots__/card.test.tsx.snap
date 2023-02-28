@@ -6,60 +6,55 @@ exports[`renders card correctly 1`] = `
   role="presentation"
 >
   <div
-    class="card h-full"
+    class="h-full bg-secondary-light"
   >
-    <img
-      alt="Test Alt"
-      data-nimg="1"
-      decoding="async"
-      height="400"
-      loading="lazy"
-      src="http://localhost/_next/image?url=https%3A%2F%2Fassets.imgix.net%2Funsplash%2Fjellyfish.jpg%3Fw%3D800%26h%3D400%26fit%3Dcrop%26crop%3Dentropy&w=1200&q=75"
-      srcset="/_next/image?url=https%3A%2F%2Fassets.imgix.net%2Funsplash%2Fjellyfish.jpg%3Fw%3D800%26h%3D400%26fit%3Dcrop%26crop%3Dentropy&w=640&q=75 1x, /_next/image?url=https%3A%2F%2Fassets.imgix.net%2Funsplash%2Fjellyfish.jpg%3Fw%3D800%26h%3D400%26fit%3Dcrop%26crop%3Dentropy&w=1200&q=75 2x"
-      style="color: transparent; background-size: cover; background-position: 50% 50%; background-repeat: no-repeat;"
-      width="600"
-    />
+    <div>
+      <img
+        alt="Test Alt"
+        data-nimg="1"
+        decoding="async"
+        height="400"
+        loading="lazy"
+        src="http://localhost/_next/image?url=https%3A%2F%2Fassets.imgix.net%2Funsplash%2Fjellyfish.jpg%3Fw%3D800%26h%3D400%26fit%3Dcrop%26crop%3Dentropy&w=1200&q=75"
+        srcset="/_next/image?url=https%3A%2F%2Fassets.imgix.net%2Funsplash%2Fjellyfish.jpg%3Fw%3D800%26h%3D400%26fit%3Dcrop%26crop%3Dentropy&w=640&q=75 1x, /_next/image?url=https%3A%2F%2Fassets.imgix.net%2Funsplash%2Fjellyfish.jpg%3Fw%3D800%26h%3D400%26fit%3Dcrop%26crop%3Dentropy&w=1200&q=75 2x"
+        style="color: transparent; background-size: cover; background-position: 50% 50%; background-repeat: no-repeat;"
+        width="600"
+      />
+    </div>
     <div
-      class="px-6 py-4"
+      class="p-5 md:p-6 bg-[#ddd] space-y-5"
     >
       <h3
-        class="mb-2 text-xl font-bold"
+        class="text-xl font-bold text-black dark:text-black"
       >
         Test Name
       </h3>
-      <div
-        class="space-y-2 text-base line-clamp-3"
+      <p
+        class="text-black dark:text-black line-clamp-3 text-[18px]"
       >
-        <p>
-          About the Breed
-        </p>
-        <p>
-          The Alaskan Klee Kai is a small-sized companion dog that is alert, energetic, and curious, yet reserved with unfamiliar people and situations.
-        </p>
-        <p>
-          The Alaskan Klee Kai is a small sized companion dog with a smooth, agile, and well-balanced gait, a body that is well proportioned with a level topline and a length slightly longer than height. The wedge-shaped head, erect triangle shaped ears, well furred double coat in three symmetrical contrasting color varieties, and a loosely curled tail reflect its arctic heritage.
-        </p>
-        <p />
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, cumque adipisci quis itaque ratione ipsa autem quibusdam numquam quo eaque reprehenderit at quae! Saepe ipsum sint odit maxime quis aliquam, sit quibusdam, officiis commodi, veniam nobis temporibus distinctio iure amet!
+      </p>
+      <div>
+        <div
+          class="inline-flex items-center flex-wrap gap-2 mt-2"
+        >
+          <span
+            class="inline-flex items-center justify-center px-3 py-1 text-sm font-semibold text-black rounded-full bg-warning"
+          >
+            Tag-1
+          </span>
+          <span
+            class="inline-flex items-center justify-center px-3 py-1 text-sm font-semibold text-black rounded-full bg-danger-light"
+          >
+            Tag-2
+          </span>
+          <span
+            class="inline-flex items-center justify-center px-3 py-1 text-sm font-semibold text-black rounded-full bg-secondary"
+          >
+            Tag-3
+          </span>
+        </div>
       </div>
-    </div>
-    <div
-      class="px-6 pt-4 pb-2"
-    >
-      <span
-        class="inline-block px-3 py-1 mb-2 mr-2 text-sm font-semibold text-black rounded-full bg-warning"
-      >
-        #tag1
-      </span>
-      <span
-        class="inline-block px-3 py-1 mb-2 mr-2 text-sm font-semibold text-black rounded-full bg-danger-light"
-      >
-        #tag2
-      </span>
-      <span
-        class="inline-block px-3 py-1 mb-2 mr-2 text-sm font-semibold text-black rounded-full bg-secondary"
-      >
-        #tag3
-      </span>
     </div>
   </div>
 </div>
@@ -71,60 +66,55 @@ exports[`renders card correctly with link 1`] = `
   role="presentation"
 >
   <div
-    class="card h-full"
+    class="h-full bg-secondary-light"
   >
-    <img
-      alt="Test Alt"
-      data-nimg="1"
-      decoding="async"
-      height="400"
-      loading="lazy"
-      src="http://localhost/_next/image?url=https%3A%2F%2Fassets.imgix.net%2Funsplash%2Fjellyfish.jpg%3Fw%3D800%26h%3D400%26fit%3Dcrop%26crop%3Dentropy&w=1200&q=75"
-      srcset="/_next/image?url=https%3A%2F%2Fassets.imgix.net%2Funsplash%2Fjellyfish.jpg%3Fw%3D800%26h%3D400%26fit%3Dcrop%26crop%3Dentropy&w=640&q=75 1x, /_next/image?url=https%3A%2F%2Fassets.imgix.net%2Funsplash%2Fjellyfish.jpg%3Fw%3D800%26h%3D400%26fit%3Dcrop%26crop%3Dentropy&w=1200&q=75 2x"
-      style="color: transparent; background-size: cover; background-position: 50% 50%; background-repeat: no-repeat;"
-      width="600"
-    />
+    <div>
+      <img
+        alt="Test Alt"
+        data-nimg="1"
+        decoding="async"
+        height="400"
+        loading="lazy"
+        src="http://localhost/_next/image?url=https%3A%2F%2Fassets.imgix.net%2Funsplash%2Fjellyfish.jpg%3Fw%3D800%26h%3D400%26fit%3Dcrop%26crop%3Dentropy&w=1200&q=75"
+        srcset="/_next/image?url=https%3A%2F%2Fassets.imgix.net%2Funsplash%2Fjellyfish.jpg%3Fw%3D800%26h%3D400%26fit%3Dcrop%26crop%3Dentropy&w=640&q=75 1x, /_next/image?url=https%3A%2F%2Fassets.imgix.net%2Funsplash%2Fjellyfish.jpg%3Fw%3D800%26h%3D400%26fit%3Dcrop%26crop%3Dentropy&w=1200&q=75 2x"
+        style="color: transparent; background-size: cover; background-position: 50% 50%; background-repeat: no-repeat;"
+        width="600"
+      />
+    </div>
     <div
-      class="px-6 py-4"
+      class="p-5 md:p-6 bg-[#ddd] space-y-5"
     >
       <h3
-        class="mb-2 text-xl font-bold"
+        class="text-xl font-bold text-black dark:text-black"
       >
         Test Name
       </h3>
-      <div
-        class="space-y-2 text-base line-clamp-3"
+      <p
+        class="text-black dark:text-black line-clamp-3 text-[18px]"
       >
-        <p>
-          About the Breed
-        </p>
-        <p>
-          The Alaskan Klee Kai is a small-sized companion dog that is alert, energetic, and curious, yet reserved with unfamiliar people and situations.
-        </p>
-        <p>
-          The Alaskan Klee Kai is a small sized companion dog with a smooth, agile, and well-balanced gait, a body that is well proportioned with a level topline and a length slightly longer than height. The wedge-shaped head, erect triangle shaped ears, well furred double coat in three symmetrical contrasting color varieties, and a loosely curled tail reflect its arctic heritage.
-        </p>
-        <p />
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, cumque adipisci quis itaque ratione ipsa autem quibusdam numquam quo eaque reprehenderit at quae! Saepe ipsum sint odit maxime quis aliquam, sit quibusdam, officiis commodi, veniam nobis temporibus distinctio iure amet!
+      </p>
+      <div>
+        <div
+          class="inline-flex items-center flex-wrap gap-2 mt-2"
+        >
+          <span
+            class="inline-flex items-center justify-center px-3 py-1 text-sm font-semibold text-black rounded-full bg-warning"
+          >
+            Tag-1
+          </span>
+          <span
+            class="inline-flex items-center justify-center px-3 py-1 text-sm font-semibold text-black rounded-full bg-danger-light"
+          >
+            Tag-2
+          </span>
+          <span
+            class="inline-flex items-center justify-center px-3 py-1 text-sm font-semibold text-black rounded-full bg-secondary"
+          >
+            Tag-3
+          </span>
+        </div>
       </div>
-    </div>
-    <div
-      class="px-6 pt-4 pb-2"
-    >
-      <span
-        class="inline-block px-3 py-1 mb-2 mr-2 text-sm font-semibold text-black rounded-full bg-warning"
-      >
-        #tag1
-      </span>
-      <span
-        class="inline-block px-3 py-1 mb-2 mr-2 text-sm font-semibold text-black rounded-full bg-danger-light"
-      >
-        #tag2
-      </span>
-      <span
-        class="inline-block px-3 py-1 mb-2 mr-2 text-sm font-semibold text-black rounded-full bg-secondary"
-      >
-        #tag3
-      </span>
     </div>
   </div>
 </div>
