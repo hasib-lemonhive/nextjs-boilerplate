@@ -1,15 +1,32 @@
-import React, { createContext, useContext, useEffect, useState } from 'react';
+import React, {
+  createContext,
+  useContext,
+  useEffect,
+  useMemo,
+  useState,
+} from 'react';
 import { getWindow } from 'ssr-window';
-import { Breakpoint, BREAKPOINTS } from '@root/src/themes/interface';
+import {
+  Breakpoint,
+  BREAKPOINTS,
+  CONTAINERS,
+} from '@root/src/themes/interface';
 import { IProviderProps } from '../types/interface';
+import { CONTAINER_DEFAULT_PADDING } from '@root/src/themes/layout';
+
+type OffsetType = number | string;
 
 export interface ILayoutDimension {
   container: Breakpoint;
   width: number;
   height: number;
+  offset: OffsetType;
 }
 
-const getWindowDimension = (): Omit<ILayoutDimension, 'container'> => {
+const getWindowDimension = (): Omit<
+  ILayoutDimension,
+  'container' | 'offset'
+> => {
   const { innerWidth: width, innerHeight: height } = getWindow();
   return { width, height };
 };
@@ -31,6 +48,7 @@ const contextDefaultValues: ILayoutDimension = {
   container: INITIAL_CONTAINER,
   width: INITIAL_WINDOW_WIDTH,
   height: INITIAL_WINDOW_HEIGHT,
+  offset: 0,
 };
 
 const ViewportContext = createContext<ILayoutDimension>(contextDefaultValues);
@@ -53,12 +71,22 @@ export default function ViewportProvider({ children }: IProviderProps) {
     return (): void => window.removeEventListener('resize', handleResize);
   }, []);
 
+  const containerOffset = useMemo(
+    () => (width - CONTAINERS[container]) / 2,
+    [container, width]
+  );
+  const offset: OffsetType =
+    containerOffset > 0
+      ? containerOffset + CONTAINER_DEFAULT_PADDING
+      : `${CONTAINER_DEFAULT_PADDING}px`;
+
   return (
     <ViewportContext.Provider
       value={{
         container,
         width: windowDimension.width,
         height: windowDimension.height,
+        offset,
       }}
     >
       {children}
@@ -67,6 +95,6 @@ export default function ViewportProvider({ children }: IProviderProps) {
 }
 
 export const useViewport = () => {
-  const { container, width, height } = useContext(ViewportContext);
-  return { container, width, height };
+  const { container, width, height, offset } = useContext(ViewportContext);
+  return { container, width, height, offset };
 };

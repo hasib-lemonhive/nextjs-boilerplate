@@ -6,7 +6,6 @@ export { SwiperSlide as CarouselItem } from 'swiper/react';
 import { ISwiperProps } from './interface';
 import { IBreakpoints } from 'src/themes/interface';
 import { useViewport } from 'src/contexts/viewport';
-import { useOffset } from 'src/contexts/offset';
 import { useIsDomReady } from 'src/contexts/dom-ready';
 
 // Inject Autoplay
@@ -46,8 +45,7 @@ const Carousel = ({
   showItems = SHOW_ITEMS,
   speed = 800,
 }: ISwiperProps): JSX.Element | null => {
-  const offset = useOffset();
-  const { container } = useViewport();
+  const { container, offset } = useViewport();
 
   /**
    * Used for - react hydration.
