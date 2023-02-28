@@ -7,6 +7,7 @@ import {
   redirectOutlineButtonProps,
 } from './mock-data';
 import { buttonColorSchemes, buttonSizes } from './interface';
+import Container from '@components/container';
 
 const meta: Meta<typeof Component> = {
   component: Component,
@@ -39,9 +40,9 @@ const meta: Meta<typeof Component> = {
   decorators: [
     (Story) => (
       <div className="py-10">
-        <div className="container">
+        <Container>
           <Story />
-        </div>
+        </Container>
       </div>
     ),
   ],
