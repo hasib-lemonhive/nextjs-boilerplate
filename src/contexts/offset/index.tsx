@@ -16,7 +16,7 @@ export default function OffsetProvider({ children }: IProviderProps) {
     () => (width - CONTAINERS[container]) / 2,
     [container, width]
   );
-  const offset: number | string =
+  const offset: OffsetType =
     containerOffset > 0
       ? containerOffset + CONTAINER_DEFAULT_PADDING
       : `${CONTAINER_DEFAULT_PADDING}px`;

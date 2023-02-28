@@ -1,12 +1,14 @@
 import { createContext, useContext, useEffect, useState } from 'react';
 import { IProviderProps } from '../types/interface';
 
-const contextDefaultValue: boolean = false;
+type DomReady = boolean;
 
-const DomReadyContext = createContext<Boolean>(contextDefaultValue);
+const contextDefaultValue: DomReady = false;
+
+const DomReadyContext = createContext<DomReady>(contextDefaultValue);
 
 export default function IsDomReadyProvider({ children }: IProviderProps) {
-  const [isDomReady, setIsDomReady] = useState<boolean>(false);
+  const [isDomReady, setIsDomReady] = useState<DomReady>(false);
 
   useEffect(() => {
     setIsDomReady(true);
