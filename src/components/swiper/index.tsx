@@ -5,9 +5,9 @@ export { SwiperSlide as CarouselItem } from 'swiper/react';
 
 import { ISwiperProps } from './interface';
 import { IBreakpoints } from 'src/themes/interface';
-import { ViewportContextValue } from 'src/contexts/viewport';
-import { OffsetContextValue } from 'src/contexts/offset';
-import { DomReadyContextValue } from 'src/contexts/dom-ready';
+import { useViewport } from 'src/contexts/viewport';
+import { useOffset } from 'src/contexts/offset';
+import { useIsDomReady } from 'src/contexts/dom-ready';
 
 // Inject Autoplay
 SwiperCore.use([Autoplay]);
@@ -46,14 +46,14 @@ const Carousel = ({
   showItems = SHOW_ITEMS,
   speed = 800,
 }: ISwiperProps): JSX.Element | null => {
-  const offset = OffsetContextValue();
-  const { container } = ViewportContextValue();
+  const offset = useOffset();
+  const { container } = useViewport();
 
   /**
    * Used for - react hydration.
    * https://nextjs.org/docs/messages/react-hydration-error
    */
-  const isDomReady = DomReadyContextValue();
+  const isDomReady = useIsDomReady();
 
   // autoplay
   const autoplaySettings = {

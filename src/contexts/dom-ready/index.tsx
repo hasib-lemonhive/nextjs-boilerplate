@@ -1,13 +1,17 @@
-import { createContext, useContext } from 'react';
-import { useIsDomReady } from 'src/hooks/dom-ready';
+import { createContext, useContext, useEffect, useState } from 'react';
 import { IProviderProps } from '../types/interface';
 
 const contextDefaultValue: boolean = false;
 
 const DomReadyContext = createContext<Boolean>(contextDefaultValue);
 
-export default function DomReadyProvider({ children }: IProviderProps) {
-  const isDomReady = useIsDomReady();
+export default function IsDomReadyProvider({ children }: IProviderProps) {
+  const [isDomReady, setIsDomReady] = useState<boolean>(false);
+
+  useEffect(() => {
+    setIsDomReady(true);
+  }, []);
+
   return (
     <DomReadyContext.Provider value={isDomReady}>
       {children}
@@ -15,7 +19,7 @@ export default function DomReadyProvider({ children }: IProviderProps) {
   );
 }
 
-export const DomReadyContextValue = () => {
+export const useIsDomReady = () => {
   const isDomReady = useContext(DomReadyContext);
   return isDomReady;
 };
