@@ -1,6 +1,7 @@
 import Component from '.';
 import { Meta, StoryObj } from '@storybook/react';
 import { mockDog } from './mock-data';
+import Container from '@components/container';
 
 const meta: Meta<typeof Component> = {
   component: Component,
@@ -10,11 +11,11 @@ const meta: Meta<typeof Component> = {
   decorators: [
     (Story) => (
       <div className="py-10">
-        <div className="container">
+        <Container>
           <div className="max-w-[360px]">
             <Story />
           </div>
-        </div>
+        </Container>
       </div>
     ),
   ],

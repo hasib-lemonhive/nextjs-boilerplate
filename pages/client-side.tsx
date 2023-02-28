@@ -6,6 +6,7 @@ import useSWR from 'swr';
 import { client } from 'src/backend/client';
 import { ISanityPage } from 'src/backend/types/entities/page';
 import { customPortableTextRaw } from '@components/cards/card/mock-data';
+import Container from '@components/container';
 
 const Home: NextPage = () => {
   const { data, error, isLoading } = useSWR<ISanityPage>(PageQuery, (query) =>
@@ -21,11 +22,11 @@ const Home: NextPage = () => {
       </Head>
       <main className="flex flex-col items-center justify-center flex-1 min-h-screen bg-gray-light dark:bg-black">
         <section className="section-padding-primary">
-          <div className="container">
+          <Container>
             {isLoading && <div>Loading...</div>}
             {error && <div>{error.message}</div>}
             {data && <CustomPortableText content={customPortableTextRaw} />}
-          </div>
+          </Container>
         </section>
       </main>
     </>

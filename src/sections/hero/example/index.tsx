@@ -2,6 +2,7 @@ import React from 'react';
 import { IExampleHero } from './interface';
 import Button from '@components/button';
 import { redirectButtonProps } from '@components/button/mock-data';
+import Container from '@components/container';
 
 function ExampleHero({ title, description }: IExampleHero) {
   return (
@@ -9,7 +10,7 @@ function ExampleHero({ title, description }: IExampleHero) {
       role="hero"
       className={`dark:bg-black bg-gray section-padding-primary min-h-screen flex items-center`}
     >
-      <div className="container">
+      <Container>
         <div className="mx-auto max-w-[800px] text-center">
           <h1 className={`text-3xl font-extrabold sm:text-5xl dark:text-white`}>
             {title.regularPart}
@@ -32,7 +33,7 @@ function ExampleHero({ title, description }: IExampleHero) {
             />
           </div>
         </div>
-      </div>
+      </Container>
     </section>
   );
 }

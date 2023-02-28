@@ -14,6 +14,7 @@ import {
   swiperPreviewimages,
 } from '@components/swiper/mock-data';
 import Image from 'next/image';
+import Container from '@components/container';
 
 interface Props {
   dogs: ISanityDog[];
@@ -28,7 +29,7 @@ const Home: NextPage<Props> = ({ dogs }) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="section-padding-primary bg-gray dark:bg-black">
-        <div className="container">
+        <Container>
           <div className="max-w-[800px] mx-auto">
             <div className="text-center">
               <h1 className="text-4xl dark:text-white">
@@ -82,7 +83,7 @@ const Home: NextPage<Props> = ({ dogs }) => {
               })}
             </div>
           </div>
-        </div>
+        </Container>
       </main>
       <Carousel {...swiperCommonOptions} haveOffset>
         {swiperPreviewimages.map((swiperPreviewimage, index) => (

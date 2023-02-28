@@ -1,5 +1,6 @@
 import React from 'react';
 import { IExampleBody } from './interface';
+import Container from '@components/container';
 
 function ExampleBody({ content }: IExampleBody) {
   return (
@@ -7,9 +8,9 @@ function ExampleBody({ content }: IExampleBody) {
       role="example-body-section"
       className="flex items-center justify-center h-screen section-padding-primary dark:bg-black-light bg-gray-light"
     >
-      <div className="container text-center">
-        <h3 className="pb-3 text-6xl">{content}</h3>
-      </div>
+      <Container>
+        <h3 className="pb-3 text-6xl text-center">{content}</h3>
+      </Container>
     </section>
   );
 }
