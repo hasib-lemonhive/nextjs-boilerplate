@@ -1,12 +1,11 @@
 /* 
-  Our custom container 
-  TODO: If need please update (xl,2xl or more) as per your design, no need to touch upto lg breakpoint
+*   TODO: If need please update (xl,2xl or more) as per your design, no need to touch upto lg breakpoint
 */
 .container {
   /* local variable  */
-  --spacing-x: 16px;
-  --padding-left: var(--spacing-x);
-  --padding-right: var(--spacing-x);
+  --padding-x: 16px;
+  --padding-left: var(--padding-x);
+  --padding-right: var(--padding-x);
   --padding: calc(var(--padding-left) + var(--padding-right));
   --container-2xl: 1320px;
 
@@ -20,7 +19,7 @@
   @apply max-w-full;
 }
 .container.no-padding {
-  --spacing-x: 0px;
+  --padding-x: 0px;
 }
 @screen md {
   .container {
@@ -45,12 +44,3 @@
     max-width: calc(var(--container-2xl) + var(--padding));
   }
 }
-
-/* 
-TODO: If need more wider container layout, follow this convention 
-@media (min-width: 1600px) {
-  .container {
-    max-width: calc(var(--container-3xl) + var(--padding));
-  }
-} 
-*/
