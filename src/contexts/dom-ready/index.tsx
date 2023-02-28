@@ -1,6 +1,6 @@
 import { createContext, useContext } from 'react';
 import { useIsDomReady } from 'src/hooks/dom-ready';
-import { IProviderProps } from '../common/interface';
+import { IProviderProps } from '../types/interface';
 
 const contextDefaultValue: boolean = false;
 

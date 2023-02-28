@@ -1,6 +1,6 @@
 import { createContext, useContext } from 'react';
 import { OffsetType, useOffset } from 'src/hooks/offset';
-import { IProviderProps } from '../common/interface';
+import { IProviderProps } from '../types/interface';
 
 const defaultOffsetValue: OffsetType = 0;
 

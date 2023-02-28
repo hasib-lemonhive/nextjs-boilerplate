@@ -1,6 +1,6 @@
 import React, { createContext, useContext } from 'react';
 import { ILayoutDimension, useViewport } from 'src/hooks/viewport';
-import { IProviderProps } from '../common/interface';
+import { IProviderProps } from '../types/interface';
 
 const contextDefaultValues: ILayoutDimension = {
   container: '2xl',
