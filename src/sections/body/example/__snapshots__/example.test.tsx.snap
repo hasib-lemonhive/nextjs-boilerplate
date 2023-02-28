@@ -6,10 +6,10 @@ exports[`Renders Example Body section correctly 1`] = `
   role="example-body-section"
 >
   <div
-    class="container text-center"
+    class="container"
   >
     <h3
-      class="pb-3 text-6xl"
+      class="pb-3 text-6xl text-center"
     >
       This is lorem ipsum content
     </h3>
