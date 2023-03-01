@@ -4,7 +4,7 @@ import {
   SanityLinkTypeEnum,
 } from 'src/backend/types/general/links';
 
-export function extractLink(
+export function extractLinkGlobal(
   link: ISanityOptionalLink | ISanityRequiredLink
 ): string {
   if (link.linkType == SanityLinkTypeEnum.Internal) {
